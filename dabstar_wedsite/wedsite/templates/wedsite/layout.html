@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title>{% block title %}DabStar Wedding{% endblock %}</title>
+
+	<link rel="Icon" href="{% static 'wedsite/imgs/favicon.ico' %}" type="image/x-icon">
+
+	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		
+    <link rel="stylesheet" href="{% static 'wedsite/styles.css' %}">
+    <!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'wedsite/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'wedsite/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'wedsite/bootstrap.css' %}">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="{% static 'wedsite/magnific-popup.css' %}">
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="{% static 'wedsite/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'wedsite/owl.theme.default.min.css' %}">
+
+    {% comment %} {% block script %}{% endblock %} {% endcomment %}
+
+    <!-- Modernizr JS -->
+	<script src="{% static 'wedsite/modernizr-2.6.2.min.js' %}"></script>
+
+	<script>
+		var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
+
+		// default example
+		simplyCountdown('.simply-countdown-one', {
+			year: d.getFullYear(),
+			month: d.getMonth() + 1,
+			day: d.getDate()
+		});
+
+		//jQuery example
+		$('#simply-countdown-losange').simplyCountdown({
+			year: d.getFullYear(),
+			month: d.getMonth() + 1,
+			day: d.getDate(),
+			enableUtc: false
+		});
+	</script>
+</head>
+
+<body>
+
+[hello das ist layout.html]
+
+{% block body %}
+{% endblock %}
+
+</body>
+
+</html>
