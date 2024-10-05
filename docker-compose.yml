@@ -4,6 +4,8 @@ services:
   django:
     image: django-docker:0.0.1
     build: .
+    env_file:
+      - .env
     ports:
       - 8001:8000
     command: sh -c "python dabstar_wedsite/manage.py migrate && python dabstar_wedsite/manage.py runserver 0.0.0.0:8000"
