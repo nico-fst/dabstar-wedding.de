@@ -15,3 +15,7 @@
 img {
     height: 250px;
 }
+
+.errortext {
+    color: red;
+}

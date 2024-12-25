@@ -41,5 +41,19 @@
     <h1>Das Menü</h1>
    <img src="{% static 'wedsite/imgs/menu_1.PNG' %}">
    <img src="{% static 'wedsite/imgs/menu_2.PNG' %}">
+</section>
+
+<section id="rsvp">
+    <h1>RSVP</h1>
+    <p>
+        Wir freuen uns, wenn ihr uns bis zum ... Bescheid gebt ...
+    </p>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Abschicken!</button>
+    </form>
+</section>
+
 
 {% endblock %}

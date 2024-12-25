@@ -44,6 +44,17 @@
 		</nav>
 	</header>
 
+	{% if errors %}
+		<h3>Oh no, mindestens ein Fehlerleinchen ist aufgetreten:</h3>
+        <ul class="errorlist">
+            {% for field, error_list in errors.items %}
+				{% for error in error_list %}
+					<p class="errortext">{{ error }}</p>
+				{% endfor %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+
 	{% block body %}
 	{% endblock %}
 
