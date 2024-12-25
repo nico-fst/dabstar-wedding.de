@@ -7,3 +7,11 @@
 .test {
     background-color: var(--brownish);
 }
+
+.body-container {
+    background-color: red;
+}
+
+img {
+    height: 250px;
+}

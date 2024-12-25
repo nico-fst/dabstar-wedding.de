@@ -16,7 +16,7 @@
 	<!-- own styles -->
 	<link rel='stylesheet' href="{% static 'wedsite/styles_nico.css' %}">
 	<!-- styles from lib -->
-    <link rel="stylesheet" href="{% static 'wedsite/styles.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'wedsite/styles.css' %}"> {% endcomment %}
 	
     <!-- Animate.css -->
 	<link rel="stylesheet" href="{% static 'wedsite/animate.css' %}">
@@ -33,11 +33,19 @@
 
 <body>
 
-<p style="background-color: orange">[hello das ist layout.html]</p>
-<p class="test">Das ist als class test braun.</p>
+	<header>
+		<h1>Hochzeit von Nia & Daniel</h1>
+		<nav>
+			<ul>
+				<li><a href="#story">Story<a/></li>
+				<li><a href="#location">Location<a/></li>
+				<li><a href="#menu">Menü<a/></li>
+			<ul>
+		</nav>
+	</header>
 
-{% block body %}
-{% endblock %}
+	{% block body %}
+	{% endblock %}
 
 </body>
 
