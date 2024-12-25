@@ -25,30 +25,6 @@
 	<!-- Owl Carousel  -->
 	<link rel="stylesheet" href="{% static 'wedsite/owl.carousel.min.css' %}">
 	<link rel="stylesheet" href="{% static 'wedsite/owl.theme.default.min.css' %}">
-
-    {% comment %} {% block script %}{% endblock %} {% endcomment %}
-
-    <!-- Modernizr JS -->
-	<script src="{% static 'wedsite/modernizr-2.6.2.min.js' %}"></script>
-
-	<script>
-		var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
-
-		// default example
-		simplyCountdown('.simply-countdown-one', {
-			year: d.getFullYear(),
-			month: d.getMonth() + 1,
-			day: d.getDate()
-		});
-
-		//jQuery example
-		$('#simply-countdown-losange').simplyCountdown({
-			year: d.getFullYear(),
-			month: d.getMonth() + 1,
-			day: d.getDate(),
-			enableUtc: false
-		});
-	</script>
 </head>
 
 <body>
