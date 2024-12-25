@@ -12,8 +12,12 @@
 	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-		
+	
+	<!-- own styles -->
+	<link rel='stylesheet' href="{% static 'wedsite/styles_nico.css' %}">
+	<!-- styles from lib -->
     <link rel="stylesheet" href="{% static 'wedsite/styles.css' %}">
+	
     <!-- Animate.css -->
 	<link rel="stylesheet" href="{% static 'wedsite/animate.css' %}">
 	<!-- Icomoon Icon Fonts-->
@@ -29,7 +33,8 @@
 
 <body>
 
-[hello das ist layout.html]
+<p style="background-color: orange">[hello das ist layout.html]</p>
+<p class="test">Das ist als class test braun.</p>
 
 {% block body %}
 {% endblock %}

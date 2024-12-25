@@ -1,0 +1,9 @@
+:root {
+    --whitish: #F2F4F3;
+    --brownish: #A9927D;
+    --brown: #5E4F3F;
+}
+
+.test {
+    background-color: var(--brownish);
+}
