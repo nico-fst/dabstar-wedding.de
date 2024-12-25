@@ -15,34 +15,20 @@
 	
 	<!-- own styles -->
 	<link rel='stylesheet' href="{% static 'wedsite/styles_nico.css' %}">
-	<!-- styles from lib -->
-    {% comment %} <link rel="stylesheet" href="{% static 'wedsite/styles.css' %}"> {% endcomment %}
-	
-    <!-- Animate.css -->
-	<link rel="stylesheet" href="{% static 'wedsite/animate.css' %}">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="{% static 'wedsite/icomoon.css' %}">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="{% static 'wedsite/bootstrap.css' %}">
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="{% static 'wedsite/magnific-popup.css' %}">
-	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="{% static 'wedsite/owl.carousel.min.css' %}">
-	<link rel="stylesheet" href="{% static 'wedsite/owl.theme.default.min.css' %}">
 </head>
 
 <body>
 
-	<header>
-		<h1>Hochzeit von Nia & Daniel</h1>
-		<nav>
-			<ul>
-				<li><a href="#story">Story<a/></li>
-				<li><a href="#location">Location<a/></li>
-				<li><a href="#menu">Menü<a/></li>
-			<ul>
-		</nav>
-	</header>
+<header class="header">
+	<nav class="navbar">
+		<a href="#story">Story</a>
+		<a href="#location">Location</a>
+		<a id="rsvp-nav" href="#rsvp">RSVP</a>
+		<a href="#menu">Menü</a>
+		<a href="mailto:he_was_willst_du@example.com">Kontakt</a>		
+	</nav>
+
+</header>
 
 	{% if errors %}
 		<h3>Oh no, mindestens ein Fehlerleinchen ist aufgetreten:</h3>

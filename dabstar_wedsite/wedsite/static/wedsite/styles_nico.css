@@ -1,15 +1,14 @@
 :root {
-    --whitish: #F2F4F3;
-    --brownish: #A9927D;
-    --brown: #5E4F3F;
-}
-
-.test {
-    background-color: var(--brownish);
-}
-
-.body-container {
-    background-color: red;
+    --whitish1: #ede8e2;
+    --whitish2: #efe7df;
+    --whitish3: #e8d9c9;
+    --brown1: #e5cbb3;
+    --brown2: #c7b09a;
+    --brown3: #ad9985;
+    --brown4: #847363;
+    --brown5: #5e4f3f;
+    --nav: rgba(147, 103, 72, 0.5);
+    --nav-darker: rgba(147, 103, 72, 0.7);
 }
 
 img {
@@ -18,4 +17,46 @@ img {
 
 .errortext {
     color: red;
+}
+
+.header {
+    position: fixed;
+    top: 2rem;
+    width: 95%;
+    right: 2.5%;;
+    padding: 0.2rem 5rem;
+    background-color: var(--nav);
+    backdrop-filter: blur(1rem);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .2);
+    border-radius: 1.25rem;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--whitish2);
+}
+
+#rsvp-nav {
+    background-color: var(--nav-darker);
+    padding: .5em 1em;
+    border-radius: 0.75rem;
+    padding: 0.5rem 1.25rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#rsvp-nav:hover {
+    background-color: var(--brown5);
+    transform: scale(1.25);
 }
