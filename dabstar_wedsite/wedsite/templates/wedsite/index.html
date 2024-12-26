@@ -4,16 +4,13 @@
 
 {% block body %}
 
-<section id="who">
+<section id="who" class="container">
     <div class="paar-back-container">
         <img id="paar-back" src="{% static 'wedsite/imgs/paar-h.jpeg' %}">
     </div>
-
-    {% comment %} <img src="{% static 'wedsite/imgs/paar-v.jpeg' %}"> {% endcomment %}
-    {% comment %} <img src="{% static 'wedsite/imgs/paar-square.jpeg' %}"> {% endcomment %}
 </section>
 
-<section id="story-sec">
+<section id="story-sec" class="container">
     <div id="story">
         <h1>Manchmal trifft man die Liebe seines Lebens auf den unerwartetsten Wegen...</h1>
         <p>
@@ -36,24 +33,24 @@
     </div>
 </section>
 
-<section id="location">
+<section id="location" class="container">
     <h1>Die Location</h1>
     <p>
         {% comment %} TODO {% endcomment %}
         Wir möchten gemeinsam mit euch feiern in ...
     </p>
     <img src="{% static 'wedsite/imgs/location-outside.jpeg' %}">
-	<img src="{% static 'wedsite/imgs/location-inside_1.jpeg' %}">
+    <img src="{% static 'wedsite/imgs/location-inside_1.jpeg' %}">
     <img src="{% static 'wedsite/imgs/location-inside_2.jpeg' %}">
 </section>
 
-<section id="menu">
+<section id="menu" class="container">
     <h1>Das Menü</h1>
-   <img src="{% static 'wedsite/imgs/menu_1.PNG' %}">
-   <img src="{% static 'wedsite/imgs/menu_2.PNG' %}">
+    <img src="{% static 'wedsite/imgs/menu_1.PNG' %}">
+    <img src="{% static 'wedsite/imgs/menu_2.PNG' %}">
 </section>
 
-<section id="rsvp">
+<section id="rsvp" class="container">
     <div class="rsvp-form-container">
         <div class="rsvp-form">
             <h1>RSVP</h1>
@@ -66,6 +63,5 @@
         </div>
     </div>
 </section>
-
 
 {% endblock %}
