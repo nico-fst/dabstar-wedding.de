@@ -39,7 +39,7 @@ class RSVPform(forms.ModelForm):
     # Message-Feld (Optional)
     message = forms.CharField(
         widget=forms.Textarea(
-            attrs={"placeholder": "Optional - falls ihr uns noch etwas mitgeben möchtet :)"}
+            attrs={"placeholder": "Optional - falls ihr uns schon etwas auf den Weg mitgeben möchtet :)"}
         ),
         required=False,  # Optionales Feld
         label=False

@@ -1,3 +1,4 @@
+// Blurr Background image
 window.addEventListener("scroll", function () {
   const image = document.getElementById("paar-back");
   const storyElement = document.getElementById("story");
@@ -27,3 +28,14 @@ window.addEventListener("scroll", function () {
   image.style.transition = "filter 0.1s ease-out"; // Schnellere Übergänge für einen dynamischeren Effekt
   image.style.filter = `blur(${blurAmount}px)`; // Anwenden des Blur-Effekts
 });
+
+
+// Curtain Animation
+document.querySelector('.curtain-left').addEventListener('animationend', function () {
+  document.querySelector('.curtain').style.display = 'none';
+})
+
+// Curtain Overlay davor ausblenden
+setTimeout(function() {
+    document.querySelector('.curtain-overlay').classList.add('hide');
+}, 1000); // 3000ms (3 Sekunden) nach Beginn der Animation
