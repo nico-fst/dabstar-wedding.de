@@ -51,7 +51,7 @@ body {
     font-size: 1.5rem;
 }
 
-#rsvp-nav {
+#rsvp-nav, button {
     background-color: var(--nav-darker);
     padding: .5em 1em;
     border-radius: 0.75rem;
@@ -59,7 +59,7 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#rsvp-nav:hover {
+#rsvp-nav:hover, button:hover {
     background-color: var(--brown5);
     transform: scale(1.25);
 }
@@ -93,7 +93,7 @@ body {
 
 #story {
     text-align: center;
-    width: 50vw;
+    width: 75vw;
     border-radius: 2rem;
     padding: 3.5rem 5rem;
     background-color: var(--nav);
@@ -103,4 +103,28 @@ body {
 
 #story h1 {
     margin-bottom: 2.5rem;
+}
+
+.rsvp-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.rsvp-form {
+    text-align: center;
+    width: 75vw;
+    margin: 5rem 0rem;
+    border-radius: 2rem;
+    padding: 3.5rem 5rem;
+    background-color: var(--nav);
+    backdrop-filter: blur(4rem);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+}
+
+.rsvp-form input,
+.rsvp-form textarea {
+    border-radius: 1rem;
+    padding: 0.5rem;
 }

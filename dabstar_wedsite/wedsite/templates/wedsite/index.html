@@ -54,15 +54,17 @@
 </section>
 
 <section id="rsvp">
-    <h1>RSVP</h1>
-    <p>
-        Wir freuen uns, wenn ihr uns bis zum ... Bescheid gebt ...
-    </p>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Abschicken!</button>
-    </form>
+    <div class="rsvp-form-container">
+        <div class="rsvp-form">
+            <h1>RSVP</h1>
+            <p>Wir freuen uns, wenn ihr uns bis zum ... Bescheid gebt ...</p>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Abschicken!</button>
+            </form>
+        </div>
+    </div>
 </section>
 
 

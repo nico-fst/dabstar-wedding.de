@@ -20,7 +20,7 @@ class RSVPform(forms.ModelForm):
     # Email-Feld
     email = forms.EmailField(
         widget=forms.EmailInput(
-            attrs={"placeholder": "zur Duplikatvermeidung"}
+            attrs={"placeholder": "you@example.com"}
         ),  # Platzhalter für das Email-Feld
         label="Email",
     )
@@ -39,10 +39,10 @@ class RSVPform(forms.ModelForm):
     # Message-Feld (Optional)
     message = forms.CharField(
         widget=forms.Textarea(
-            attrs={"placeholder": "Optional, falls ihr uns noch was sagen möchtet :)"}
+            attrs={"placeholder": "Optional - falls ihr uns noch etwas mitgeben möchtet :)"}
         ),
         required=False,  # Optionales Feld
-        label="Nachricht",  # Optional: Label für Nachricht
+        label=False
     )
     
     def clean_email(self):
