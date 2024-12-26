@@ -80,6 +80,13 @@ img {
     object-fit: cover;
 }
 
+.container .deco {
+    width: 50%;
+    object-fit: contain;
+    opacity: 0.5;
+    height: 5rem;
+}
+
 section {
     margin: 3rem 0;
 }
