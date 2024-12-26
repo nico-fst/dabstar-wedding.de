@@ -9,6 +9,7 @@
     --brown5: #5e4f3f;
     --nav: rgba(147, 103, 72, 0.5);
     --nav-darker: rgba(147, 103, 72, 0.7);
+    --paar-wand: #ECE3D8;
 }
 
 img {
@@ -21,9 +22,10 @@ img {
 
 .header {
     position: fixed;
+    z-index: 99;
     top: 2rem;
-    width: 95%;
-    right: 2.5%;;
+    width: 70%;
+    right: 15%;;
     padding: 0.2rem 5rem;
     background-color: var(--nav);
     backdrop-filter: blur(1rem);
@@ -40,12 +42,13 @@ img {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: "Neutraface 2 Text Light";
 }
 
 body {
     min-height: 100vh;
     background-color: var(--whitish2);
+    font-size: 1.5rem;
 }
 
 #rsvp-nav {
@@ -59,4 +62,45 @@ body {
 #rsvp-nav:hover {
     background-color: var(--brown5);
     transform: scale(1.25);
+}
+
+.paar-back-container {
+    z-index: -9;
+    position: relative;
+    width: 100vw;
+    height: 75vh;
+    /* overflow: hiden; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paar-back-container img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    /* transition: filter 0.1s ease; */
+}
+
+#story-sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#story {
+    text-align: center;
+    width: 50vw;
+    border-radius: 2rem;
+    padding: 3.5rem 5rem;
+    background-color: var(--nav);
+    backdrop-filter: blur(4rem);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+}
+
+#story h1 {
+    margin-bottom: 2.5rem;
 }
