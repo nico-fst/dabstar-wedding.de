@@ -8,7 +8,7 @@
     <div class="curtain-left"></div>
     <div class="curtain-right"></div>
     <div class="curtain-overlay">
-        <h1>Nia & Daniel</h1>
+        <h1 id="caption">Nia & Daniel</h1>
     </div>
 </div>
 
@@ -44,28 +44,44 @@
 </section>
 
 <section id="location" class="container-ghost">
-    <h1>Die Location</h1>
+    <h1>Location</h1>
     <p>
-        {% comment %} TODO {% endcomment %}
-        Wir möchten gemeinsam mit euch feiern in ...
-        <br> Mehr Infos zur Anreise: <a href="location.html">Location</a>
+        Wir möchten gemeinsam mit euch in der <a href="https://maps.app.goo.gl/genLHAAcrGYSRbYu5?g_st=i&utm_campaign=ac-im" target="_blank">LA VIE Eventlocation</a> in Frechen feiern.
     </p>
     <div class="carousel-container">
         <div class="carousel">
             <img src="{% static 'wedsite/imgs/location-outside.jpeg' %}">
             <img src="{% static 'wedsite/imgs/location-inside_1.jpeg' %}">
             <img src="{% static 'wedsite/imgs/location-inside_2.jpeg' %}">
+            {% comment %} <img src="{% static 'wedsite/imgs/location.jpeg' %}"> {% endcomment %}
             <img src="{% static 'wedsite/imgs/location-outside.jpeg' %}">
             <img src="{% static 'wedsite/imgs/location-inside_1.jpeg' %}">
             <img src="{% static 'wedsite/imgs/location-inside_2.jpeg' %}">
+            {% comment %} <img src="{% static 'wedsite/imgs/location.jpeg' %}"> {% endcomment %}
+            <img src="{% static 'wedsite/imgs/location-outside.jpeg' %}">
+            <img src="{% static 'wedsite/imgs/location-inside_1.jpeg' %}">
+            <img src="{% static 'wedsite/imgs/location-inside_2.jpeg' %}">
+            {% comment %} <img src="{% static 'wedsite/imgs/location.jpeg' %}"> {% endcomment %}
+            <img src="{% static 'wedsite/imgs/location-outside.jpeg' %}">
+            <img src="{% static 'wedsite/imgs/location-inside_1.jpeg' %}">
+            <img src="{% static 'wedsite/imgs/location-inside_2.jpeg' %}">
+            {% comment %} <img src="{% static 'wedsite/imgs/location.jpeg' %}"> {% endcomment %}
         </div>
     </div>
 </section>
 
-<section id="menu" class="container">
-    <h1>Das Menü</h1>
-    <img src="{% static 'wedsite/imgs/menu_1.PNG' %}">
-    <img src="{% static 'wedsite/imgs/menu_2.PNG' %}">
+<section id="menu" class="menu-container">
+    <h1>Menü</h1>
+    <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <img src="{% static 'wedsite/imgs/menu_1.PNG' %}">
+            </div>
+            <div class="back">
+                <img src="{% static 'wedsite/imgs/menu_2.PNG' %}">
+            </div>
+        </div>
+    </div>
 </section>
 
 <section id="ablauf">

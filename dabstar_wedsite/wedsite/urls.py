@@ -7,5 +7,5 @@ from django.conf.urls.static import static
 app_name = "wedsite"
 
 urlpatterns = [
-    path("", views.index, name="index")
+    path("", views.index, name="index"),
 ]

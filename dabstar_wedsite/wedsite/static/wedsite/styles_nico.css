@@ -25,15 +25,26 @@
 }
 
 a {
-    color: var(--brown5);
-    text-decoration: none;
+    color: var(--brown4);
+    
 }
 
 a:hover,
 a:active,
 a:focus {
     color: black;
-    text-decoration: none;
+}
+
+#caption {
+    font-size: 5rem;
+}
+
+.maps-embed {
+    border-radius: 2rem;
+}
+
+.darker {
+    filter: brightness(50%);
 }
 
 html {
@@ -63,6 +74,14 @@ body {
     position: relative;
     left: 20%;
     list-style-position: inside;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    position: relative;
 }
 
 /* Header styles */
@@ -219,12 +238,26 @@ button:hover,
     text-align: center;
     font-size: 5rem;
     font-family: "Coneria Script Demo";
-    opacity: 1;
+    opacity: 0;
     transition: opacity 1s ease;
 }
 
 .curtain-overlay.hide {
-    opacity: 0;
+    animation: overlay-reinraus 2s ease;
+}
+
+@keyframes overlay-reinraus {
+    0% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 .curtain-left,
@@ -240,13 +273,13 @@ button:hover,
 .curtain-left {
     left: 0;
     animation: slide-left 1.5s cubic-bezier(0.77, 0, 0.175, 1);
-    animation-delay: 2s;
+    animation-delay: 3s;
 }
 
 .curtain-right {
     right: 0;
     animation: slide-right 1.5s cubic-bezier(0.77, 0, 0.175, 1);
-    animation-delay: 2s;
+    animation-delay: 3s;
 }
 
 @keyframes slide-left {
@@ -306,4 +339,48 @@ button:hover,
     100% {
         transform: translateX(0);
     }
+}
+
+
+.card-container {
+    width: 350px;
+    height: 500px;
+    background-color: var(--brown2);
+    perspective: 800px;
+    border-radius: 2.5rem;
+}
+
+.card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+    border-radius: 2.5rem;
+    overflow: hidden;
+    transform: rotateZ(-10deg);
+}
+
+.card-container:hover > .card {
+    cursor: pointer;
+    transform: rotateY(180deg) rotateZ(160deg);
+}
+
+.front,
+.back {
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front img,
+.back img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.back {
+    transform: rotateY(180deg) rotateZ(180deg);
 }

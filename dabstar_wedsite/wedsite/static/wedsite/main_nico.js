@@ -30,12 +30,12 @@ window.addEventListener("scroll", function () {
 });
 
 
-// Curtain Animation
+// Curtain Animation,
 document.querySelector('.curtain-left').addEventListener('animationend', function () {
   document.querySelector('.curtain').style.display = 'none';
 })
 
-// Curtain Overlay davor ausblenden
+// Curtain Overlay davor ausblenden - ginge auch mit animation-delay
 setTimeout(function() {
     document.querySelector('.curtain-overlay').classList.add('hide');
 }, 1000); // 3000ms (3 Sekunden) nach Beginn der Animation

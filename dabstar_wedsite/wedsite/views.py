@@ -27,7 +27,7 @@ class RSVPform(forms.ModelForm):
 
     # Teilnahme-Feld (BooleanField wird standardmäßig als Checkbox gerendert)
     attending = forms.BooleanField(label="Ich werde kommen:", required=False)
-    partner = forms.BooleanField(label="Ich bringe meinen Partner:", required=False)
+    partner = forms.BooleanField(label="Ich bringe meinen Partner mit:", required=False)
 
     child_1 = forms.BooleanField(label="Ich bringe 1 Kind:", required=False)
     child_2 = forms.BooleanField(label="Ich bringe 2 Kinder:", required=False)
@@ -83,3 +83,6 @@ def index(request):
         "form": form,
         "errors": errors
     })
+
+def location(request):
+    return render(request, "wedsite/location.html")
