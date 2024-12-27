@@ -43,15 +43,23 @@
     </div>
 </section>
 
-<section id="location" class="container">
+<section id="location" class="container-ghost">
     <h1>Die Location</h1>
     <p>
         {% comment %} TODO {% endcomment %}
         Wir möchten gemeinsam mit euch feiern in ...
+        <br> Mehr Infos zur Anreise: <a href="location.html">Location</a>
     </p>
-    <img src="{% static 'wedsite/imgs/location-outside.jpeg' %}">
-    <img src="{% static 'wedsite/imgs/location-inside_1.jpeg' %}">
-    <img src="{% static 'wedsite/imgs/location-inside_2.jpeg' %}">
+    <div class="carousel-container">
+        <div class="carousel">
+            <img src="{% static 'wedsite/imgs/location-outside.jpeg' %}">
+            <img src="{% static 'wedsite/imgs/location-inside_1.jpeg' %}">
+            <img src="{% static 'wedsite/imgs/location-inside_2.jpeg' %}">
+            <img src="{% static 'wedsite/imgs/location-outside.jpeg' %}">
+            <img src="{% static 'wedsite/imgs/location-inside_1.jpeg' %}">
+            <img src="{% static 'wedsite/imgs/location-inside_2.jpeg' %}">
+        </div>
+    </div>
 </section>
 
 <section id="menu" class="container">
@@ -60,12 +68,21 @@
     <img src="{% static 'wedsite/imgs/menu_2.PNG' %}">
 </section>
 
+<section id="ablauf">
+    <div class="container-ghost">
+        <h1>Ablauf</h1>
+        <ul>
+            <li>XX:XX Uhr - Infos kommen demnächst</li>
+        </ul>
+    </div>
+</section>
+
 <section id="rsvp" class="container">
     <div class="rsvp-form-container">
         <div class="rsvp-form">
-            <h1>RSVP</h1>
+            <h1>Zusagen | Absagen</h1>
             <p>
-                Wir freuen uns, wenn ihr uns bis zum TODO Bescheid gebt.
+                Wir freuen uns, wenn ihr uns bis zum 01. April Bescheid gebt.
                 <br>
                 Updates zum Ablauf des Tages und weitere Informationen folgen an die Email.
             </p>
