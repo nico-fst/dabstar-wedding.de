@@ -39,3 +39,15 @@ document.querySelector('.curtain-left').addEventListener('animationend', functio
 setTimeout(function() {
     document.querySelector('.curtain-overlay').classList.add('hide');
 }, 1000); // 3000ms (3 Sekunden) nach Beginn der Animation
+
+
+// Eror Popup ausblenden
+setTimeout(function () {
+  const popup = document.getElementById('error-container');
+  if (popup) {
+    popup.style.opacity = '0';
+    setTimeout(() => {
+      popup.style.display = 'none';
+    }, 500);
+  }
+}, 5000);

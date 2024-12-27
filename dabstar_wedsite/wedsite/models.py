@@ -4,17 +4,23 @@ class RSVP(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     attending = models.BooleanField()
-    guests = models.IntegerField()
-    message = models.TextField(null=True, blank=True)
+    partner = models.BooleanField()
+    kids = models.IntegerField()
+    
+    def count_guests(self):
+        if self.attending:
+            return 1 + (1 if self.partner else 0) + self.kids
+        return 0
     
     def status_str(self):
         if not self.attending:
             return "❌ kommt nicht"
         else:
-            if self.guests == 0:
-                return "✅ kommt alleine"
-            else:
-                return f"✅ kommt mit +{self.guests}"
+            return (
+                    f"[{self.count_guests()}] {self.name} kommt "
+                f"{'mit Partner' if self.partner else 'allein'} "
+                f"{f'und bringt Kinder: {self.kids}' if self.kids > 0 else ''}"
+            ).strip()
     
     def __str__(self):
         return f"{self.name} - {self.status_str()}"

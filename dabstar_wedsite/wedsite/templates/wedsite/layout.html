@@ -38,19 +38,23 @@
 
 </header>
 
-	{% if errors %}
-		<h3>Oh no, mindestens ein Fehlerleinchen ist aufgetreten:</h3>
-        <ul class="errorlist">
-            {% for field, error_list in errors.items %}
-				{% for error in error_list %}
-					<p class="errortext">{{ error }}</p>
+{% if errors %}"
+	<div id="error-container" class="error-container">
+		<div class="error-content">
+			<h3>Oh no, mindestens ein Fehlerleinchen ist aufgetreten:</h3>
+			<ul class="errorlist">
+				{% for field, error_list in errors.items %}
+					{% for error in error_list %}
+						<p class="errortext">{{ error }}</p>
+					{% endfor %}
 				{% endfor %}
-            {% endfor %}
-        </ul>
-    {% endif %}
+			</ul>
+		</div>
+	</div>
+{% endif %}
 
-	{% block body %}
-	{% endblock %}
+{% block body %}
+{% endblock %}
 
 </body>
 

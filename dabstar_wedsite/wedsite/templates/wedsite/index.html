@@ -64,12 +64,17 @@
     <div class="rsvp-form-container">
         <div class="rsvp-form">
             <h1>RSVP</h1>
-            <p>Wir freuen uns, wenn ihr uns bis zum ... Bescheid gebt ...</p>
+            <p>
+                Wir freuen uns, wenn ihr uns bis zum TODO Bescheid gebt.
+                <br>
+                Updates zum Ablauf des Tages und weitere Informationen folgen an die Email.
+            </p>
             <form method="POST">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit">Abschicken!</button>
             </form>
+            <p><br>Bitte schickt das Formular auch bei einer Absage ab.</p>
         </div>
     </div>
 </section>
