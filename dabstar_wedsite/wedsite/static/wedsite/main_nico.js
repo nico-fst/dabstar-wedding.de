@@ -72,17 +72,31 @@ links.forEach(link => {
 // Navbar bei Scrollen ausblenden
 
 let lastScrollTop = 0;
-header.style.transform = 'translateY(-90%)';
+const mediaQuery = window.matchMedia("(max-width: 880px)");
 
-window.addEventListener('scroll', function () {
+function handleScroll() {
   let currentScroll = window.scrollY || document.documentElement.scrollTop;
 
   if (currentScroll > lastScrollTop) {
     // scroll down
-    header.style.transform = 'translateY(-110%';
+    header.style.transform = "translateY(-110%)";
   } else {
     // scroll up
-    header.style.transform = 'translateY(-90%)';
+    header.style.transform = "translateY(-90%)";
   }
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-});
+}
+
+// Führe den Scroll-Effekt nur aus, wenn die Bildschirmgröße <= 880px ist
+function checkMediaQuery() {
+  if (mediaQuery.matches) {
+    window.addEventListener("scroll", handleScroll);
+  } else {
+    window.removeEventListener("scroll", handleScroll);
+    header.style.transform = "translateY(0)"; // Navbar zurücksetzen, wenn die Größe > 880px ist
+  }
+}
+
+// Initiale Prüfung und auch bei Fenstergrößenänderungen überwachen
+mediaQuery.addEventListener("change", checkMediaQuery);
+checkMediaQuery();
