@@ -23,14 +23,20 @@
 }
 
 a {
-    color: var(--brown4);
-    
+    text-decoration: dotted underline;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+p a {
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.4rem;
 }
 
 a:hover,
 /* a:active, now hard coded in .js */
 a:focus {
-    color: black;
+    color: white;
 }
 
 #caption {
