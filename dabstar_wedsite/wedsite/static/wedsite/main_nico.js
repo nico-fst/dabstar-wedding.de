@@ -21,7 +21,7 @@ window.addEventListener("scroll", function () {
   if (scrollDistance > scrollThreshold) {
     // Der Blur-Effekt wird hier schneller und stärker angewendet
     blurAmount = (scrollDistance - scrollThreshold) / 10; // Schnellere Zunahme des Blur-Effekts
-    blurAmount = Math.min(blurAmount, 1000); // Erhöhe den maximalen Blur-Effekt auf einen höheren Wert
+    blurAmount = Math.min(blurAmount, 75); // Erhöhe den maximalen Blur-Effekt auf einen höheren Wert
   }
 
   // Sanfter Übergang: Setze den Blur-Wert, aber mit Übergang
