@@ -56,13 +56,33 @@ setTimeout(function () {
 const hamburger = document.getElementById('hamburger');
 const header = document.querySelector('.header');
 hamburger.addEventListener('click', () => {
-  header.classList.toggle('active');
+  // header.classList.toggle('active');
+  header.style.transform = "translateY(0)";
 });
 
 // Click auf Link in Header schließt wieder
 const links = document.querySelectorAll('.header a');
 links.forEach(link => {
   link.addEventListener('click', () => {
-    header.classList.remove('active');
+    // header.classList.remove('active');
+    header.style.transform = "translateY(-90%)";
   })
+});
+
+// Navbar bei Scrollen ausblenden
+
+let lastScrollTop = 0;
+header.style.transform = 'translateY(-90%)';
+
+window.addEventListener('scroll', function () {
+  let currentScroll = window.scrollY || document.documentElement.scrollTop;
+
+  if (currentScroll > lastScrollTop) {
+    // scroll down
+    header.style.transform = 'translateY(-110%';
+  } else {
+    // scroll up
+    header.style.transform = 'translateY(-90%)';
+  }
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });

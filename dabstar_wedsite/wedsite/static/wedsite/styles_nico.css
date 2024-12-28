@@ -28,7 +28,7 @@ a {
 }
 
 a:hover,
-a:active,
+/* a:active, now hard coded in .js */
 a:focus {
     color: black;
 }
@@ -135,11 +135,13 @@ body {
 
     .navbar {
         flex-direction: column;
+        transition: display 0.3s ease;
     }
 
-    .header.active {
+    /* now hard coded .js */
+    /* .header.active {
         transform: translateY(0);
-    }
+    } */
 
     .navbar a {
         width: 100%;
