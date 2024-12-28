@@ -56,8 +56,13 @@ setTimeout(function () {
 const hamburger = document.getElementById('hamburger');
 const header = document.querySelector('.header');
 hamburger.addEventListener('click', () => {
-  // header.classList.toggle('active');
-  header.style.transform = "translateY(0)";
+  let opened = header.classList.contains("active");
+  if (opened) {
+    header.style.transform = "translateY(-90%)";
+  } else {
+    header.style.transform = "translateY(0)";
+  }
+  header.classList.toggle("active");
 });
 
 // Click auf Link in Header schließt wieder
