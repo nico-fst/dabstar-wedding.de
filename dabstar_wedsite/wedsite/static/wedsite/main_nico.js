@@ -29,33 +29,33 @@ window.addEventListener("scroll", function () {
   image.style.filter = `blur(${blurAmount}px)`; // Anwenden des Blur-Effekts
 });
 
-
 // Curtain Animation,
-document.querySelector('.curtain-left').addEventListener('animationend', function () {
-  document.querySelector('.curtain').style.display = 'none';
-})
+document
+  .querySelector(".curtain-left")
+  .addEventListener("animationend", function () {
+    document.querySelector(".curtain").style.display = "none";
+  });
 
 // Curtain Overlay davor ausblenden - ginge auch mit animation-delay
-setTimeout(function() {
-    document.querySelector('.curtain-overlay').classList.add('hide');
+setTimeout(function () {
+  document.querySelector(".curtain-overlay").classList.add("hide");
 }, 1000); // 3000ms (3 Sekunden) nach Beginn der Animation
-
 
 // Eror Popup ausblenden
 setTimeout(function () {
-  const popup = document.getElementById('error-container');
+  const popup = document.getElementById("error-container");
   if (popup) {
-    popup.style.opacity = '0';
+    popup.style.opacity = "0";
     setTimeout(() => {
-      popup.style.display = 'none';
+      popup.style.display = "none";
     }, 500);
   }
 }, 5000);
 
 // Click auf Hamburger öffnet Navbar
-const hamburger = document.getElementById('hamburger');
-const header = document.querySelector('.header');
-hamburger.addEventListener('click', () => {
+const hamburger = document.getElementById("hamburger");
+const header = document.querySelector(".header");
+hamburger.addEventListener("click", () => {
   let opened = header.classList.contains("active");
   if (opened) {
     header.style.transform = "translateY(-90%)";
@@ -65,21 +65,27 @@ hamburger.addEventListener('click', () => {
   header.classList.toggle("active");
 });
 
-// Click auf Link in Header schließt wieder
-const links = document.querySelectorAll('.header a');
-links.forEach(link => {
-  link.addEventListener('click', () => {
-    // header.classList.remove('active');
-    header.style.transform = "translateY(-90%)";
-  })
-});
-
-// Navbar bei Scrollen ausblenden
-
-let lastScrollTop = 0;
 const mediaQuery = window.matchMedia("(max-width: 880px)");
 
+// Click auf Link in Header schließt wieder
+function handleClosingNav() {
+  if (mediaQuery.matched) {
+    // nur bei mobile genutzt (s. unten)
+    const links = document.querySelectorAll(".header a");
+
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        // header.classList.remove('active');
+        header.style.transform = "translateY(-90%)";
+      });
+    });
+  }
+}
+
+// Navbar bei Scrollen ausblenden
+let lastScrollTop = 0;
 function handleScroll() {
+  // nur bei Mobile genutzt (s. unten)
   let currentScroll = window.scrollY || document.documentElement.scrollTop;
 
   if (currentScroll > lastScrollTop) {
@@ -92,10 +98,11 @@ function handleScroll() {
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 }
 
-// Führe den Scroll-Effekt nur aus, wenn die Bildschirmgröße <= 880px ist
+// Scroll Effekt und Header ausblenden nur bei Mobile
 function checkMediaQuery() {
   if (mediaQuery.matches) {
     window.addEventListener("scroll", handleScroll);
+    handleClosingNavClosingNav();
   } else {
     window.removeEventListener("scroll", handleScroll);
     header.style.transform = "translateY(0)"; // Navbar zurücksetzen, wenn die Größe > 880px ist
@@ -103,5 +110,5 @@ function checkMediaQuery() {
 }
 
 // Initiale Prüfung und auch bei Fenstergrößenänderungen überwachen
-mediaQuery.addEventListener("change", checkMediaQuery);
 checkMediaQuery();
+mediaQuery.addEventListener("change", checkMediaQuery);
