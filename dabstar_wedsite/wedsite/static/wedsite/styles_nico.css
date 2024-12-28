@@ -11,7 +11,6 @@
     --nav-darker: rgba(147, 103, 72, 0.7);
     --paar-wand: #ECE3D8;
 
-    --content-padding: 3.5rem 5rem;
     --button-padding: 0.5rem 1.25rem;
     --transition-speed: 0.3s ease;
 }
@@ -53,9 +52,15 @@ html {
 body {
     min-height: 100vh;
     background-color: var(--whitish2);
-    font-size: 1.5rem;
+    font-size: 24px;
     font-family: "Neutraface 2 Text Light";
     text-align: center;
+}
+
+@media (max-width: 880px) {
+    body {
+        font-size: 16px;
+    }
 }
 
 /* reusable container */
@@ -74,6 +79,13 @@ body {
     position: relative;
     left: 20%;
     list-style-position: inside;
+}
+
+@media (max-width: 880px) {
+    .container-ghost {
+        width: 80%;
+        left: 10%;
+    }
 }
 
 .menu-container {
@@ -211,7 +223,7 @@ section {
     width: 75vw;
     margin: 5rem 0rem;
     border-radius: 2rem;
-    padding: var(--content-padding);
+    padding: 2rem 5rem;
     background-color: var(--nav);
     backdrop-filter: blur(4rem);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -224,6 +236,27 @@ h1 {
 
 h2 {
     font-size: 2.5rem;
+}
+
+h1, h2 {
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 880px) {
+    #story,
+    .rsvp-form-container {
+        width: 90vw;
+        padding: 1rem 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
 }
 
 #story-sec h2 {
@@ -360,10 +393,17 @@ button:hover,
 }
 
 .carousel img {
-    width: 300px;  /* Feste Breite für jedes Bild */
+    width: 300px;
     object-fit: cover;
     border-radius: 1rem;
-    border: 1rem solid transparent;
+    border: 0.5rem solid transparent;
+}
+
+@media (max-width: 880px) {
+    .carousel img {
+        height: 125px;
+        border: 0.2rem solid transparent;
+    }
 }
 
 @keyframes scroll-carousel {
@@ -385,8 +425,15 @@ button:hover,
     flex-direction: row;
     gap: 5rem;
     justify-content: center;
+    align-items: center;
     z-index: 2;
     margin-top: 2rem;
+}
+
+@media (max-width: 880px) {
+    .card-wrapper {
+        flex-direction: column;
+    }
 }
 
 .card-container {
@@ -403,6 +450,13 @@ button:hover,
     height: 30vw;
     width: 30vw;
     max-width: 300px;
+}
+
+@media (max-width: 880px) {
+    #qr-card-container {
+        height: 50vw;
+        width: 50vw;
+    }
 }
 
 .card {
@@ -427,6 +481,16 @@ button:hover,
      rotateZ(-10deg);
 }
 
+@media (max-width: 880px) {
+    .card-container {
+        height: 75vw;
+        width: 50vw;
+    }
+
+    #menu .card-container:hover>.card {
+        transform: rotateY(180deg) scale(1.5) rotateZ(-10deg);
+    }
+}
 
 .front,
 .back {
@@ -465,10 +529,6 @@ button:hover,
     } 100% {
         opacity: 1;
     }
-}
-
-.qr-code {
-    border-radius: 2.5rem;
 }
 
 .footer {
