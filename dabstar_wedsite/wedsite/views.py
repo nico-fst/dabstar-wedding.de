@@ -2,6 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django import forms
 from .models import RSVP
+import qrcode
+import os
+from dotenv import load_dotenv
+from io import BytesIO
+import base64
 
 
 class RSVPform(forms.ModelForm):
@@ -69,6 +74,26 @@ class RSVPform(forms.ModelForm):
 
 
 def index(request):
+    load_dotenv()
+
+    qr = qrcode.QRCode(
+        version=1,
+        error_correction=qrcode.constants.ERROR_CORRECT_L,
+        box_size=10,
+        border=4,
+    )
+
+    # create QR code > img
+    qr.add_data(os.getenv("DROPZONE_URL"))
+    qr.make(fit=True)
+    img = qr.make_image(fill_color="#A2836E", back_color="white")
+
+    # QR Code -> Base64
+    buffer = BytesIO()
+    img.save(buffer, format="PNG")
+    qr_img_base64 = base64.b64encode(buffer.getvalue()).decode("utf-8")
+    buffer.close()
+
     if request.method == "POST":
         form = RSVPform(request.POST)
         if form.is_valid():
@@ -81,7 +106,9 @@ def index(request):
         errors = None
     return render(request, "wedsite/index.html", {
         "form": form,
-        "errors": errors
+        "errors": errors,
+        "dropzone_url": os.getenv("DROPZONE_URL"),
+        "qr_img": qr_img_base64,
     })
 
 def location(request):

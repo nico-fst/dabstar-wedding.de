@@ -348,18 +348,25 @@ button:hover,
     display: flex;
     flex-direction: row;
     gap: 5rem;
-    flex-wrap: flex;
     justify-content: center;
+    z-index: 2;
+    margin-top: 2rem;
 }
 
 .card-container {
-    height: 37vh;
-    width: 30vw;
-    max-height: 430px;
-    max-width: 310px;
+    height: 30vw;
+    width: 20vw;
+    max-height: 300px;
+    max-width: 200px;
     background-color: var(--brown2);
     perspective: 800px;
     border-radius: 2.5rem;
+}
+
+#qr-card-container {
+    height: 30vw;
+    width: 30vw;
+    max-width: 300px;
 }
 
 .card {
@@ -379,6 +386,12 @@ button:hover,
      rotateZ(-10deg);
 }
 
+#menu .card-container:hover>.card {
+    transform: rotateY(180deg) scale(2)
+     rotateZ(-10deg);
+}
+
+
 .front,
 .back {
     height: 100%;
@@ -391,7 +404,7 @@ button:hover,
 .front img,
 .back img {
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .back {
@@ -416,6 +429,10 @@ button:hover,
     } 100% {
         opacity: 1;
     }
+}
+
+.qr-code {
+    border-radius: 2.5rem;
 }
 
 .footer {

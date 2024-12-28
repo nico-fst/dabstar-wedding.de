@@ -10,3 +10,4 @@ python-dotenv
 django-storages==1.14.3
 # uwsgi==2.0
 setuptools
+qrcode[pil]

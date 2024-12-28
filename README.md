@@ -6,6 +6,14 @@
 A wedding page focused on a clean and simple, yet beige-stunning look.
 
 - saves validated RSVPs in `db.sqlite3` in `wedsite_data/` as volume
+- .env should provide:
+
+```yml
+SECRET_KEY=<...>
+DEBUG=<True|False>
+ALLOWED_HOSTS=<dabstar-wedding.de, ...>
+DROPZONE_URL=<https://...>
+```
 
 # Deploy
 

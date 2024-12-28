@@ -72,6 +72,7 @@
 
 <section id="menu" class="menu-container">
     <h1>Menü</h1>
+    <p>Klicke oder hover über die Karte fürs Hauptmenü</p>
     <div class="card-wrapper">
         <div class="card-container">
             <div class="card">
@@ -80,16 +81,6 @@
                 </div>
                 <div class="back">
                     <img src="{% static 'wedsite/imgs/menu_2.PNG' %}">
-                </div>
-            </div>
-        </div>
-            <div class="card-container">
-            <div class="card">
-                <div class="front">
-                    <img src="{% static 'wedsite/imgs/paar-v.jpeg' %}">
-                </div>
-                <div class="back">
-                    <img src="{% static 'wedsite/imgs/paar-square.jpeg' %}">
                 </div>
             </div>
         </div>
@@ -123,5 +114,34 @@
         </div>
     </div>
 </section>
+
+<section id="dropzone" class="container-ghost">
+    <h1>Dropzone</h1>
+    <p><a href={{dropzone_url}}>Hier</a> könnt ihr uns im Nachhinein auf direktem Wege eure liebsten Fotos und Videos der Hochzeit zukommen lassen:</p>
+    <br>
+    <div class="card-wrapper">
+        <div class="card-container">
+            <div class="card">
+                <div class="front">
+                    <img src="{% static 'wedsite/imgs/paar-v.jpeg' %}">
+                </div>
+                <div class="back">
+                    <img src="{% static 'wedsite/imgs/paar-square.jpeg' %}">
+                </div>
+            </div>
+        </div>
+        <div class="card-container" id="qr-card-container">
+            <div class="card">
+                <div class="front">
+                    <img class="qr-code" src="data:image/png;base64,{{ qr_img }}" alt="QR Code">
+                </div>
+                <div class="back">
+                    <img class="qr-code" src="data:image/png;base64,{{ qr_img }}" alt="QR Code">
+                </div>
+            </div>
+        </div>
+</section>
+
+<br><br>
 
 {% endblock %}
