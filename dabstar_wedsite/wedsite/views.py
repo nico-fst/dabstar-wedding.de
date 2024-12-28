@@ -12,7 +12,7 @@ import base64
 class RSVPform(forms.ModelForm):
     class Meta:
         model = RSVP
-        fields = ['name', 'email', 'attending', 'partner']
+        fields = ['name', 'email', 'attending', 'partner'] # müssen drin sein, sonst IntegrityError
 
     # Name-Feld
     name = forms.CharField(
@@ -37,6 +37,8 @@ class RSVPform(forms.ModelForm):
     child_1 = forms.BooleanField(label="Ich bringe 1 Kind:", required=False)
     child_2 = forms.BooleanField(label="Ich bringe 2 Kinder:", required=False)
 
+    not_attending = forms.BooleanField(label="Ich werde nicht kommen:", required=False)
+
     def clean_email(self):
         email = self.cleaned_data.get('email')
         if RSVP.objects.filter(email=email).exists():
@@ -52,7 +54,9 @@ class RSVPform(forms.ModelForm):
         child_1 = self.cleaned_data.get('child_1', False)
         child_2 = self.cleaned_data.get("child_2", False)
         if child_1 and child_2:
-            raise forms.ValidationError("He, du hast ausgewählt, dass du 1 und 2 Kinder mitbringst: Bitte wähle nur eins aus.")
+            raise forms.ValidationError(
+                "Huch! Du hast ausgewählt, dass du sowohl 1 als auch 2 Kinder mitbringst. Sind die so schnell gewachsen? Bitte entscheide dich für eine Option – wir brauchen Klarheit!"
+            )
         cleaned_data["kids"] = 1 if child_1 else 2 if child_2 else 0
 
         # Guard: not coming, but bringing guests???
@@ -61,6 +65,12 @@ class RSVPform(forms.ModelForm):
         if not attending and (cleaned_data["kids"] != 0 or partner):
             raise forms.ValidationError(
                 "Öhm, du hast angegeben, dass du nicht kommst, aber Gäste mitbringst? Das passt nicht so ganz: Bitte korrigiere das."
+            )
+            
+        # Guard: coming, but not attending???
+        if attending and self.cleaned_data.get("not_attending"):
+            raise forms.ValidationError(
+                "Du hast angegeben, dass du kommst, aber auch, dass du nicht kommst. Das ist sus. Bitte korrigiere das."
             )
 
         return cleaned_data
@@ -98,7 +108,7 @@ def index(request):
         form = RSVPform(request.POST)
         if form.is_valid():
             form.save()  # speichert in DB
-            return HttpResponse("Danke für deine Anmeldung!")
+            return HttpResponse("Danke für deine Rückmeldung! Wenn diese Seite immer noch nur eine hässliche HttpResponse ist, schreibe mir doch, dass ich dran denken soll, das noch zu ändern: website@nicostern.de - Hoffentlich sieht das niemals jemand")
         else:
             errors = form.errors
     else:
@@ -110,6 +120,3 @@ def index(request):
         "dropzone_url": os.getenv("DROPZONE_URL"),
         "qr_img": qr_img_base64,
     })
-
-def location(request):
-    return render(request, "wedsite/location.html")

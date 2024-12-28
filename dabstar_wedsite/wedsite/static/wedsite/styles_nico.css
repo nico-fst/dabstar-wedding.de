@@ -552,3 +552,8 @@ button:hover,
 .footer {
     color: var(--brown3);
 }
+
+label.disabled {
+    color: rgba(0, 0, 0, 0.2);
+    cursor: not-allowed;
+}
