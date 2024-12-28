@@ -51,3 +51,18 @@ setTimeout(function () {
     }, 500);
   }
 }, 5000);
+
+// Click auf Hamburger öffnet Navbar
+const hamburger = document.getElementById('hamburger');
+const header = document.querySelector('.header');
+hamburger.addEventListener('click', () => {
+  header.classList.toggle('active');
+});
+
+// Click auf Link in Header schließt wieder
+const links = document.querySelectorAll('.header a');
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    header.classList.remove('active');
+  })
+});

@@ -101,9 +101,46 @@ body {
     border-radius: 1.25rem;
 }
 
-.header a {
+.navbar a {
     text-decoration: none;
     color: white;
+    display: inline-block;
+    padding: 1rem;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+@media (max-width: 1064px) {
+    .header {
+        transform: translateY(-90%);
+        transition: transform 0.3s ease;
+        width: 80%;
+        left: 10%;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .header.active {
+        transform: translateY(0);
+    }
+
+    .navbar a {
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        color: var(--brown5);
+    }
 }
 
 img {
