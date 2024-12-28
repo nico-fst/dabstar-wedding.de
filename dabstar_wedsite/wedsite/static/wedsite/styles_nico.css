@@ -23,7 +23,7 @@
 }
 
 a {
-    text-decoration: dotted underline;
+    text-decoration: underline;
     color: black;
     transition: color 0.3s ease;
 }
