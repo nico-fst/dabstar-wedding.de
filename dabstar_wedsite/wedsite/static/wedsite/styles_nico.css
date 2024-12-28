@@ -343,10 +343,19 @@ button:hover,
     }
 }
 
+.card-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    flex-wrap: flex;
+    justify-content: center;
+}
 
 .card-container {
-    width: 350px;
-    height: 500px;
+    height: 37vh;
+    width: 30vw;
+    max-height: 430px;
+    max-width: 310px;
     background-color: var(--brown2);
     perspective: 800px;
     border-radius: 2.5rem;
@@ -366,7 +375,7 @@ button:hover,
 .card-container:hover > .card {
     cursor: pointer;
     transform: rotateY(180deg)
-     rotateZ(160deg);
+     rotateZ(-10deg);
 }
 
 .front,
@@ -386,7 +395,7 @@ button:hover,
 
 .back {
     transform: rotateY(180deg)
-     rotateZ(180deg);
+     /* rotateZ(180deg); */
 }
 
 .back img {
