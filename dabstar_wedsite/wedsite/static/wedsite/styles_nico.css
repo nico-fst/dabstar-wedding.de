@@ -203,6 +203,16 @@ img {
     object-fit: cover;
 }
 
+@media (max-width: 880px) {
+    .paar-back-container {
+        height: 60vh;
+    }
+
+    .paar-back-container img {
+        /* height: 80vh; */
+    }
+}
+
 .container .deco {
     width: 50%;
     object-fit: contain;
