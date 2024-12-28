@@ -80,7 +80,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
+    align-items: center;
+    width: 70%;
+    left: 15%;
     position: relative;
 }
 
@@ -363,7 +365,8 @@ button:hover,
 
 .card-container:hover > .card {
     cursor: pointer;
-    transform: rotateY(180deg) rotateZ(160deg);
+    transform: rotateY(180deg)
+     rotateZ(160deg);
 }
 
 .front,
@@ -372,7 +375,7 @@ button:hover,
     width: 100%;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
     position: absolute;
-    backface-visibility: hidden;
+    /* backface-visibility: hidden; */
 }
 
 .front img,
@@ -382,5 +385,25 @@ button:hover,
 }
 
 .back {
-    transform: rotateY(180deg) rotateZ(180deg);
+    transform: rotateY(180deg)
+     rotateZ(180deg);
+}
+
+.back img {
+    opacity: 0;
+}
+
+.back:hover img {
+    animation: popin 1s forwards;
+}
+
+/* workaround insteaf of backface-visibility */
+@keyframes popin {
+    49% {
+        opacity: 0;
+    } 50% {
+        opacity: 1;
+    } 100% {
+        opacity: 1;
+    }
 }
