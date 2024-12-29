@@ -74,6 +74,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    list-style-position: inside;
 }
 
 .container-ghost {
@@ -233,6 +234,22 @@ section {
 #story-sec,
 #rsvp {
     width: 100%;
+}
+
+#story table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+#story table th,
+#story table td {
+    padding: 8px;
+    text-align: center;
+}
+
+#story table th {
+    font-weight: bold;
 }
 
 #story,

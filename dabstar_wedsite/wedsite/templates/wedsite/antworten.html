@@ -1,0 +1,59 @@
+{% extends "wedsite/layout.html" %}
+
+{% load static %}
+
+{% block body %}
+
+<div class="curtain">
+    <div class="curtain-left"></div>
+    <div class="curtain-right"></div>
+    <div class="curtain-overlay">
+        <h1 id="caption">Antworten...</h1>
+    </div>
+</div>
+
+<header class="header">
+	<nav class="navbar">
+		<a href="{% url 'wedsite:index' %}">&gt;</a>
+		<a href="{% url 'wedsite:index' %}">&gt;</a>
+		<a id="rsvp-nav" href="{% url 'wedsite:index' %}">Startseite</a>
+		<a href="{% url 'wedsite:index' %}">&lt;</a>
+		<a href="{% url 'wedsite:index' %}">&lt;</a>		
+	</nav>
+	<div class="hamburger" id="hamburger">&#9776;</div>
+</header>
+
+<section id="story-sec" class="container">
+    <div id="story">
+        <h1>Antworten</h1>
+        <p>Es haben von insgesamt {{sum}} Antworten {{sum_zusagen}} zugesagt und {{sum_abgesagt}} abgesagt.</p>
+        <p>Damit kommen <strong>insgesamt {{sum_coming}} Personen</strong> (davon {{sum_kids}} Kinder und {{sum_adults}} Erwachsene).</p><br>
+
+        <!--Tabelle mit Kommenden--> 
+        <h2>Zusagen ({{sum_zusagen}}/{{sum}})</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Partner</th>
+                <th>#Kinder</th>
+                <th>Email</th>
+            </tr>
+            {% for guest in guests_coming %}
+            <tr>
+                <td>{{ guest.name }}</td>
+                <td>{{ guest.partner }}</td>
+                <td>{{ guest.kids }}</td>
+                <td><a href="mailto:{{ guest.email }}">Mail</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2>Absagen ({{sum_abgesagt}}/{{sum}})</h2>
+        <ul>
+            {% for guest in guests_not_coming %}
+            <li>{{ guest.name }}</li>
+            {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

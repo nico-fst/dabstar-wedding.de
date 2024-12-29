@@ -120,3 +120,29 @@ def index(request):
         "dropzone_url": os.getenv("DROPZONE_URL"),
         "qr_img": qr_img_base64,
     })
+
+def antworten(request):
+    guests_coming = RSVP.objects.filter(attending=True)
+    guests_not_coming = RSVP.objects.filter(attending=False)
+    
+    sum_coming = 0
+    sum_adults = 0
+    for guest in guests_coming:
+        sum_coming += 1 + (int)(guest.partner) + guest.kids
+        sum_adults += 1 + (int)(guest.partner)
+        
+    sum_kids = sum(guest.kids for guest in guests_coming)
+    
+    for guest in guests_coming:
+        guest.partner = "kommt" if guest.partner else "kommt nicht"        
+    
+    return render(request, "wedsite/antworten.html", {
+        "guests_coming": guests_coming,
+        "guests_not_coming": guests_not_coming,
+        "sum_zusagen": len(guests_coming),
+        "sum_coming": sum_coming,
+        "sum_abgesagt": len(guests_not_coming),
+        "sum": len(guests_coming) + len(guests_not_coming),
+        "sum_kids": sum_kids,
+        "sum_adults": sum_adults
+    })
