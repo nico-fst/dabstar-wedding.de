@@ -25,7 +25,4 @@ jobs:
     - name: Run docker-compose
       run: docker compose up --build -d
     - name: Migrate
-      uses: docker://docker/compose:latest
-      with:
-        # -T: Disable pseudo-tty allocation, sonst error
-        args: exec -T django python manage.py migrate --verbosity 3
+      run: docker compose exec -T dabstar-wedsite python manage.pz migrate --verbosity 3
