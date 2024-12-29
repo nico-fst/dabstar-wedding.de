@@ -27,4 +27,4 @@ jobs:
     - name: ls Container
       run: docker ps -a
     - name: Migrate
-      run: docker compose exec -T dabstar-wedsite python manage.py migrate --verbosity 3
+      run: docker exec -T dabstar-wedsite python manage.py migrate --verbosity 3
