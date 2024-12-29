@@ -210,6 +210,20 @@ img {
     object-fit: cover;
 }
 
+/* Desktop: paar-h.jpeg */
+@media (min-width: 881px) {
+    #paar-back-v {
+        display: none;
+    }
+}
+
+/* Mobile: paar-v.jpeg */
+@media (max-width: 880px) {
+    #paar-back-h {
+        display: none;
+    }
+}
+
 @media (max-width: 880px) {
     .paar-back-container {
         height: 60vh;
