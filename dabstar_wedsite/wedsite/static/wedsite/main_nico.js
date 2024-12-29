@@ -1,6 +1,5 @@
-// Blurr Background image
 window.addEventListener("scroll", function () {
-  const image = document.getElementById("paar-back");
+  const images = document.querySelectorAll(".paar-back"); // Mehrere Bilder mit der Klasse "paar-back"
   const storyElement = document.getElementById("story");
 
   const scrollDistance = window.scrollY; // Wie weit wurde gescrollt?
@@ -25,8 +24,13 @@ window.addEventListener("scroll", function () {
   }
 
   // Sanfter Übergang: Setze den Blur-Wert, aber mit Übergang
-  image.style.transition = "filter 0.1s ease-out"; // Schnellere Übergänge für einen dynamischeren Effekt
-  image.style.filter = `blur(${blurAmount}px)`; // Anwenden des Blur-Effekts
+  images.forEach((image) => {
+    // hier könnte (sollte) man noch effizienter machen, dass nur das sichtbare Bild geblurred wird, aber das sehe ich grad nicht ein, soll das doch der Client rendern
+    
+    // Prüfen, ob das Bild sichtbar ist
+    image.style.transition = "filter 0.1s ease-out"; // Übergangseffekt
+    image.style.filter = `blur(${blurAmount}px)`; // Anwenden des Blur-Effekts
+  });
 });
 
 // Curtain Animation,
