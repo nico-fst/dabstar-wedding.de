@@ -13,6 +13,13 @@ jobs:
     
     steps:
     - uses: actions/checkout@v4
+    - name: Create .env
+      run: |
+        touch .env
+        echo "SECRET_KEY=${SECRET_KEY}" >> .env
+        echo "DEBUG=False" >> .env
+        echo "ALLOWED_HOSTS=*" >> .env
+        echo "DROPZONE_URL=https://google.com" >> .env
     - name: Set up Docker
       uses: docker/setup-buildx-action@v2
     - name: Run docker-compose
