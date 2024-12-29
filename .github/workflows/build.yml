@@ -24,5 +24,11 @@ jobs:
       uses: docker/setup-buildx-action@v2
     - name: Run docker-compose
       run: docker compose up --build -d
+    - name: Wait for Django container
+      run: |
+        until docker compose exec -T django python manage.py check --deploy; do
+            echo "Waiting for Django to be ready..."
+            sleep 5
+        done
     - name: Migrate
       run: docker compose exec -T dabstar-wedsite python manage.pz migrate --verbosity 3
