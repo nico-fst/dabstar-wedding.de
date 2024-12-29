@@ -1,0 +1,27 @@
+name: Just build
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: LOCAL
+    env:
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      DEBUG: "False"
+      ALLOWED_HOSTS: "*"
+      DROPZONE_URL: "https://google.com"
+    
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Docker
+      uses: docker/setup-buildx-action@v2
+    - name: Run docker-compose
+      uses: docker://docker/compose:latest
+      with:
+        args: up --build -d
+    - name: Migrate
+      uses: docker://docker/compose:latest
+      with:
+        # -T: Disable pseudo-tty allocation, sonst error
+        args: exec -T django python manage.py migrate --verbosity 3
