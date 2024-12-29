@@ -26,7 +26,7 @@ jobs:
       run: docker compose up --build -d
     - name: Wait for Django container
       run: |
-        until docker compose exec -T django python manage.py check --deploy; do
+        until docker compose exec -T dabstar-wedsite python manage.py check --deploy; do
             echo "Waiting for Django to be ready..."
             sleep 5
         done
