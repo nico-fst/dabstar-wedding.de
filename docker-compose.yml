@@ -12,4 +12,5 @@ services:
       - wedsite_data:/app/dabstar_wedsite/wedsite_data/
 
 volumes:
-    wedsite_data:
+  wedsite_data:
+     
