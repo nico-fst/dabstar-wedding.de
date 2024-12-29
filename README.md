@@ -27,5 +27,4 @@ DROPZONE_URL=<https://...>
 
 # Credits
 
-- ([HTML/CSS/JS Code I used and adapted for this website](https://themewagon.com/themes/free-bootstrap-wedding-website-template/)) not used anymore
 - [Favicon](https://icon-icons.com/download/144595/ICO/512/)
