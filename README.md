@@ -1,5 +1,6 @@
 ![django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green)
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![Build CI](https://github.com/nico-fst/dabstar-wedding.de/actions/workflows/build.yml/badge.svg)
 
 # Dabstar-Wedding.de
 
