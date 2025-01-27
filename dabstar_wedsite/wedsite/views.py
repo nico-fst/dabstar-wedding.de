@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.utils.translation import activate
+from django.http import HttpResponse, HttpResponseRedirect
 from django import forms
 from .models import RSVP
 import qrcode
@@ -7,16 +8,17 @@ import os
 from dotenv import load_dotenv
 from io import BytesIO
 import base64
+# from django.utils.translation import get_language
 
 
-class RSVPform(forms.ModelForm):
+class RSVPform(forms.ModelForm):    
     class Meta:
         model = RSVP
         fields = ['name', 'email', 'attending', 'partner'] # müssen drin sein, sonst IntegrityError
 
     # Name-Feld
     name = forms.CharField(
-        widget=forms.TextInput(  # Statt CharInput verwenden wir TextInput
+        widget=forms.TextInput(
             attrs={"placeholder": "Vorname Nachname"}
         ),  # Platzhalter für das Name-Feld
         label="Name",
@@ -25,7 +27,9 @@ class RSVPform(forms.ModelForm):
     # Email-Feld
     email = forms.EmailField(
         widget=forms.EmailInput(
-            attrs={"placeholder": "you@example.com"}
+            attrs={
+                "placeholder": "name@beispiel.com"
+            }
         ),  # Platzhalter für das Email-Feld
         label="Email",
     )
@@ -66,7 +70,7 @@ class RSVPform(forms.ModelForm):
             raise forms.ValidationError(
                 "Öhm, du hast angegeben, dass du nicht kommst, aber Gäste mitbringst? Das passt nicht so ganz: Bitte korrigiere das."
             )
-            
+
         # Guard: coming, but not attending???
         if attending and self.cleaned_data.get("not_attending"):
             raise forms.ValidationError(
@@ -108,7 +112,7 @@ def index(request):
         form = RSVPform(request.POST)
         if form.is_valid():
             form.save()  # speichert in DB
-            return HttpResponse("Danke für deine Rückmeldung! Wenn diese Seite immer noch nur eine hässliche HttpResponse ist, schreibe mir doch, dass ich dran denken soll, das noch zu ändern: website@nicostern.de - Hoffentlich sieht das niemals jemand")
+            return HttpResponse("Rückmeldung eingegangen. Hier kommt noch ne schicke Seite hin.")
         else:
             errors = form.errors
     else:

@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html lang="de">
@@ -32,7 +33,7 @@
 {% if errors %}"
 	<div id="error-container" class="error-container">
 		<div class="error-content">
-			<h3>Oh no, mindestens ein Fehlerleinchen ist aufgetreten:</h3>
+			<h3>{% trans "Oh no, mindestens ein Fehlerleinchen ist aufgetreten:" %}</h3>
 			<ul class="errorlist">
 				{% for field, error_list in errors.items %}
 					{% for error in error_list %}
