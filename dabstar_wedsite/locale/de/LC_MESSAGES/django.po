@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-27 19:59+0100\n"
+"POT-Creation-Date: 2025-02-19 20:54+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1243,15 +1243,18 @@ msgid "Connect, get help, or contribute"
 msgstr ""
 
 #: wedsite/templates/wedsite/index.html:19
+#: wedsite/templates/wedsite/thanks.html:19
 msgid "Menü"
 msgstr ""
 
 #: wedsite/templates/wedsite/index.html:20
+#: wedsite/templates/wedsite/thanks.html:20
 msgid "Zusagen"
 msgstr ""
 
 #: wedsite/templates/wedsite/index.html:21
 #: wedsite/templates/wedsite/index.html:120
+#: wedsite/templates/wedsite/thanks.html:21
 msgid "Ablauf"
 msgstr ""
 
@@ -1364,4 +1367,19 @@ msgstr ""
 
 #: wedsite/templates/wedsite/layout.html:39
 msgid "Oh no, mindestens ein Fehlerleinchen ist aufgetreten:"
+msgstr ""
+
+#: wedsite/templates/wedsite/thanks.html:12
+msgid "Danke"
+msgstr ""
+
+#: wedsite/templates/wedsite/thanks.html:29
+msgid "Danke fürs Abschicken"
+msgstr ""
+
+#: wedsite/templates/wedsite/thanks.html:31
+msgid ""
+"Und noch ein kleiner Tipp: Falls ihr noch nicht wisst, was ihr Bethy & "
+"Daniel schenken wollt, könnt ihr sie mit einem Zuschuss zur Finanzierung "
+"glücklich machen :)."
 msgstr ""

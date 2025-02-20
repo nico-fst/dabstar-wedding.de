@@ -112,7 +112,7 @@ def index(request):
         form = RSVPform(request.POST)
         if form.is_valid():
             form.save()  # speichert in DB
-            return HttpResponse("Rückmeldung eingegangen. Hier kommt noch ne schicke Seite hin.")
+            return render(request, "wedsite/thanks.html")
         else:
             errors = form.errors
     else:

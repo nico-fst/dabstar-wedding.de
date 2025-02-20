@@ -1,0 +1,36 @@
+{% extends "wedsite/layout.html" %}
+
+{% load static %}
+{% load i18n %}
+
+{% block body %}
+
+<div class="curtain">
+    <div class="curtain-left"></div>
+    <div class="curtain-right"></div>
+    <div class="curtain-overlay">
+        <h1 id="caption">{% trans "Danke" %}</h1>
+    </div>
+</div>
+
+<header class="header">
+	<nav class="navbar">
+		<a href="#location">Location</a>
+		<a href="#menu">{% trans "Menü" %}</a>
+		<a id="rsvp-nav" href="#rsvp">{% trans "Zusagen" %}</a>
+		<a href="#ablauf">{% trans "Ablauf" %}</a>
+		<a href="#dropzone">Dropzone</a>		
+	</nav>
+	<div class="hamburger" id="hamburger">&#9776;</div>
+</header>
+
+<section id="story-sec" class="container">
+    <div id="story">
+        <h2>{% trans "Danke fürs Abschicken" %}</h2>
+        <p>
+            {% trans "Und noch ein kleiner Tipp: Falls ihr noch nicht wisst, was ihr Bethy & Daniel schenken wollt, könnt ihr sie mit einem Zuschuss zur Finanzierung glücklich machen :)." %}
+        </p>
+    </div>
+</section>
+
+{% endblock %}
