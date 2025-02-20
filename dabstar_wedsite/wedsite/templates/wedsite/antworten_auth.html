@@ -1,0 +1,20 @@
+{% extends "wedsite/layout.html" %}
+
+{% load static %}
+
+{% block body %}
+
+<section id="story-sec" class="container">
+    <div id="story">
+        <h1>Passwort</h1>
+        <p>Bitte gib das Passwort ein, um die Antworten zu sehen.</p>
+
+        <form method="post">
+            {% csrf_token %}
+            <input type="password" name="pw" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

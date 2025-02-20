@@ -14,6 +14,7 @@ SECRET_KEY=<...>
 DEBUG=<True|False>
 ALLOWED_HOSTS=<dabstar-wedding.de, ...>
 DROPZONE_URL=<https://...>
+PW_ANTWORTEN=<...>
 ```
 
 # Deploy

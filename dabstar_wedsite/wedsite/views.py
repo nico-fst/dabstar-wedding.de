@@ -126,6 +126,15 @@ def index(request):
     })
 
 def antworten(request):
+    # falls noch nicht authed
+    if not request.session.get("antworten_granted"):
+        if request.method == "POST":
+            if request.POST.get("pw") == os.getenv("PW_ANTWORTEN"):
+                request.session["antworten_granted"] = True
+                return redirect("wedsite:antworten")
+            return render(request, "wedsite/antworten_auth.html")
+        return render(request, "wedsite/antworten_auth.html")
+        
     guests_coming = RSVP.objects.filter(attending=True)
     guests_not_coming = RSVP.objects.filter(attending=False)
     

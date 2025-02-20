@@ -5,6 +5,12 @@
 
 {% block body %}
 
+<section id="who" class="container">
+    <div class="paar-back-container">
+        <img class="paar-back" src="{% static 'wedsite/imgs/meinlieblingsbild.jpeg' %}">
+    </div>
+</section>
+
 <div class="curtain">
     <div class="curtain-left"></div>
     <div class="curtain-right"></div>
@@ -15,11 +21,11 @@
 
 <header class="header">
 	<nav class="navbar">
-		<a href="#location">Location</a>
-		<a href="#menu">{% trans "Menü" %}</a>
-		<a id="rsvp-nav" href="#rsvp">{% trans "Zusagen" %}</a>
-		<a href="#ablauf">{% trans "Ablauf" %}</a>
-		<a href="#dropzone">Dropzone</a>		
+		<a href="{% url 'wedsite:index' %}">&gt;</a>
+		<a href="{% url 'wedsite:index' %}">&gt;</a>
+		<a id="rsvp-nav" href="{% url 'wedsite:index' %}">Startseite</a>
+		<a href="{% url 'wedsite:index' %}">&lt;</a>
+		<a href="{% url 'wedsite:index' %}">&lt;</a>		
 	</nav>
 	<div class="hamburger" id="hamburger">&#9776;</div>
 </header>
