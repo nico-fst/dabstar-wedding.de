@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.utils.translation import activate
 from django.http import HttpResponse, HttpResponseRedirect
+from django.core.exceptions import PermissionDenied
 from django import forms
 from .models import RSVP
 import qrcode
@@ -8,13 +9,19 @@ import os
 from dotenv import load_dotenv
 from io import BytesIO
 import base64
+
 # from django.utils.translation import get_language
 
 
-class RSVPform(forms.ModelForm):    
+class RSVPform(forms.ModelForm):
     class Meta:
         model = RSVP
-        fields = ['name', 'email', 'attending', 'partner'] # müssen drin sein, sonst IntegrityError
+        fields = [
+            "name",
+            "email",
+            "attending",
+            "partner",
+        ]  # müssen drin sein, sonst IntegrityError
 
     # Name-Feld
     name = forms.CharField(
@@ -27,9 +34,7 @@ class RSVPform(forms.ModelForm):
     # Email-Feld
     email = forms.EmailField(
         widget=forms.EmailInput(
-            attrs={
-                "placeholder": "name@beispiel.com"
-            }
+            attrs={"placeholder": "name@beispiel.com"}
         ),  # Platzhalter für das Email-Feld
         label="Email",
     )
@@ -44,9 +49,11 @@ class RSVPform(forms.ModelForm):
     not_attending = forms.BooleanField(label="Ich werde nicht kommen:", required=False)
 
     def clean_email(self):
-        email = self.cleaned_data.get('email')
+        email = self.cleaned_data.get("email")
         if RSVP.objects.filter(email=email).exists():
-            raise forms.ValidationError("Hoppla, diese Email-Adresse wurde bereits registriert. Warst das nicht du? Wende dich gerne an website@nicostern.de :)")
+            raise forms.ValidationError(
+                "Hoppla, diese Email-Adresse wurde bereits registriert. Warst das nicht du? Wende dich gerne an website@nicostern.de :)"
+            )
         return email
 
     # def clean_negative(self):
@@ -55,7 +62,7 @@ class RSVPform(forms.ModelForm):
         cleaned_data = super().clean()
 
         # child_1 und child_2: bool -> IntegerField
-        child_1 = self.cleaned_data.get('child_1', False)
+        child_1 = self.cleaned_data.get("child_1", False)
         child_2 = self.cleaned_data.get("child_2", False)
         if child_1 and child_2:
             raise forms.ValidationError(
@@ -118,44 +125,65 @@ def index(request):
     else:
         form = RSVPform()
         errors = None
-    return render(request, "wedsite/index.html", {
-        "form": form,
-        "errors": errors,
-        "dropzone_url": os.getenv("DROPZONE_URL"),
-        "qr_img": qr_img_base64,
-    })
+    return render(
+        request,
+        "wedsite/index.html",
+        {
+            "form": form,
+            "errors": errors,
+            "dropzone_url": os.getenv("DROPZONE_URL"),
+            "qr_img": qr_img_base64,
+        },
+    )
+
 
 def antworten(request):
     # falls noch nicht authed
     if not request.session.get("antworten_granted"):
+        # brute force guard init
+        if "antworten_attempts" not in request.session:
+            request.session["antworten_attempts"] = 0
+
+        # validate pw
         if request.method == "POST":
             if request.POST.get("pw") == os.getenv("PW_ANTWORTEN"):
                 request.session["antworten_granted"] = True
                 return redirect("wedsite:antworten")
+            # else if PW wrong: brute force guard
+            request.session["antworten_attempts"] += 1
+            if request.session["antworten_attempts"] >= 3:
+                raise PermissionDenied(
+                    "Paul, hör auf, die Seite zu brute forcen oder gib dir beim Eingeben mehr Mühe. Timeout für dich."
+                )
             return render(request, "wedsite/antworten_auth.html")
+        request.session["antworten_attempts"] = 0
         return render(request, "wedsite/antworten_auth.html")
-        
+
     guests_coming = RSVP.objects.filter(attending=True)
     guests_not_coming = RSVP.objects.filter(attending=False)
-    
+
     sum_coming = 0
     sum_adults = 0
     for guest in guests_coming:
         sum_coming += 1 + (int)(guest.partner) + guest.kids
         sum_adults += 1 + (int)(guest.partner)
-        
+
     sum_kids = sum(guest.kids for guest in guests_coming)
-    
+
     for guest in guests_coming:
-        guest.partner = "kommt" if guest.partner else "kommt nicht"        
-    
-    return render(request, "wedsite/antworten.html", {
-        "guests_coming": guests_coming,
-        "guests_not_coming": guests_not_coming,
-        "sum_zusagen": len(guests_coming),
-        "sum_coming": sum_coming,
-        "sum_abgesagt": len(guests_not_coming),
-        "sum": len(guests_coming) + len(guests_not_coming),
-        "sum_kids": sum_kids,
-        "sum_adults": sum_adults
-    })
+        guest.partner = "kommt" if guest.partner else "kommt nicht"
+
+    return render(
+        request,
+        "wedsite/antworten.html",
+        {
+            "guests_coming": guests_coming,
+            "guests_not_coming": guests_not_coming,
+            "sum_zusagen": len(guests_coming),
+            "sum_coming": sum_coming,
+            "sum_abgesagt": len(guests_not_coming),
+            "sum": len(guests_coming) + len(guests_not_coming),
+            "sum_kids": sum_kids,
+            "sum_adults": sum_adults,
+        },
+    )
