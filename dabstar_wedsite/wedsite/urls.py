@@ -9,4 +9,5 @@ app_name = "wedsite"
 urlpatterns = [
     path("", views.index, name="index"),
     path("antworten/", views.antworten, name="antworten"),
+    path("download-ics/", views.download_ics, name="download_ics"),
 ]

@@ -10,8 +10,6 @@ from dotenv import load_dotenv
 from io import BytesIO
 import base64
 
-# from django.utils.translation import get_language
-
 
 class RSVPform(forms.ModelForm):
     class Meta:
@@ -187,3 +185,24 @@ def antworten(request):
             "sum_adults": sum_adults,
         },
     )
+
+def download_ics(request):
+    ics_content = """\
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:einladung@dabstar-wedding.de
+DTSTAMP:20250220T120000Z
+DTSTART;VALUE=DATE:20251003
+DTEND;VALUE=DATE:20251004
+SUMMARY:Dabstar Wedding 💍
+DESCRIPTION:14:30 wedding (estimated) - view dabstar-wedding.de for updated info
+LOCATION:Ernst-Heinrich-Geist-Straße 22, 50226 Frechen, Deutschland
+END:VEVENT
+END:VCALENDAR
+"""
+
+    resp = HttpResponse(ics_content, content_type='text/calendar')
+    resp['Content-Disposition'] = 'attachment; filename="dabstar-wedding.ics"'
+    return resp
