@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-20 14:22+0100\n"
+"POT-Creation-Date: 2025-02-20 17:25+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1325,14 +1325,14 @@ msgstr ""
 #: wedsite/templates/wedsite/index.html:54
 msgid ""
 "Im sechsten Jahre nach diesem schicksalhaften Abend, möchten wir unser Glück "
-"mit unserer Familie und unseren Freunden feiern. Wir freuen uns darauf, "
-"diesen besonderen Moment mit euch allen zu teilen und die Liebe zu "
-"zelebrieren, die an einem spontanen Abend in Köln ihren Anfang fand."
+"mit unserer Familie und unseren Freunden am 03.10.2025 feiern. Wir freuen "
+"uns darauf, diesen besonderen Moment mit euch allen zu teilen und die Liebe "
+"zu zelebrieren, die an einem spontanen Abend in Köln ihren Anfang fand."
 msgstr ""
 "In the sixth year since that fateful evening, we would like to celebrate our "
-"good fortune with our family and friends. We look forward to sharing this "
-"special moment with all of you and celebrating the love that began on a "
-"spontaneous evening in Cologne."
+"good fortune with our family and friends on October 3, 2025. We look forward "
+"to sharing this special moment with all of you and celebrating the love that "
+"began on a spontaneous evening in Cologne."
 
 #: wedsite/templates/wedsite/index.html:62
 msgid "Wir möchten gemeinsam mit euch feiern in der"
@@ -1371,19 +1371,23 @@ msgstr "Submit!"
 msgid "Bitte schickt das Formular auch bei einer Absage ab."
 msgstr "Please submit the form even if you plan to cancel."
 
-#: wedsite/templates/wedsite/index.html:129
-msgid "14:30 - Trauung (schätzungsweise)"
+#: wedsite/templates/wedsite/index.html:128
+msgid "Wann: 03.10.2025"
+msgstr "When: October 3, 2025"
+
+#: wedsite/templates/wedsite/index.html:130
+msgid "ca. 13:00 - Trauung (schätzungsweise)"
 msgstr "14:30 - wedding (estimated)"
 
-#: wedsite/templates/wedsite/index.html:131
-msgid "Weitere Informationen folgen."
+#: wedsite/templates/wedsite/index.html:132
+msgid "Weitere Informationen folgen. Bitte periodisch hier nachschauen."
 msgstr "Stay tuned for more information."
 
-#: wedsite/templates/wedsite/index.html:137
+#: wedsite/templates/wedsite/index.html:138
 msgid "Hier"
 msgstr "Here"
 
-#: wedsite/templates/wedsite/index.html:137
+#: wedsite/templates/wedsite/index.html:138
 msgid ""
 "könnt ihr uns im Nachhinein auf direktem Wege eure liebsten Fotos und Videos "
 "der Hochzeit zukommen lassen:"
