@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-19 20:54+0100\n"
+"POT-Creation-Date: 2025-02-20 13:01+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1399,21 +1399,24 @@ msgid "Oh no, mindestens ein Fehlerleinchen ist aufgetreten:"
 msgstr "Oh no, at least one error occured:"
 
 #: wedsite/templates/wedsite/thanks.html:12
-msgid "Cheers"
+msgid "Danke"
 msgstr "Cheers"
 
 #: wedsite/templates/wedsite/thanks.html:29
-#, fuzzy
-#| msgid "Abschicken!"
 msgid "Danke fürs Abschicken"
 msgstr "Thanks for responding!"
 
 #: wedsite/templates/wedsite/thanks.html:31
 msgid ""
-"Und noch ein kleiner Tipp: Falls ihr noch nicht wisst, was ihr Bethy & "
-"Daniel schenken wollt, könnt ihr sie mit einem Zuschuss zur Finanzierung "
-"glücklich machen :)."
-msgstr "And a little tip: If you’re still unsure what to get Bethy & Daniel, you can make them happy with a contribution to their funding. :)"
+"Und noch ein kleiner Tipp: Falls ihr noch nicht wisst, was ihr Nia & Daniel "
+"schenken wollt, könnt ihr sie mit einem Zuschuss zur Finanzierung glücklich "
+"machen :)."
+msgstr ""
+"And a little tip: If you’re still unsure what to get Nia & Daniel, you can "
+"make them happy with a contribution to their funding. :)"
+
+#~ msgid "Cheers"
+#~ msgstr "Cheers"
 
 #~ msgid "XX:XX Uhr - Infos kommen demnächst"
 #~ msgstr "XX:XX p.m. - information coming soon"
