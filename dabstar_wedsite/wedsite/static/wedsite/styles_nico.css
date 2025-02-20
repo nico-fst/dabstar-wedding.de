@@ -69,6 +69,16 @@ body {
     }
 }
 
+.lang-box {
+    background-color: none;
+    display: inline;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 5rem;
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
 /* reusable container */
 .container {
     display: flex;

@@ -95,6 +95,8 @@ class RSVPform(forms.ModelForm):
 def index(request):
     load_dotenv()
 
+    lang = request.path.split('/')[1]
+
     qr = qrcode.QRCode(
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_L,
@@ -123,6 +125,14 @@ def index(request):
     else:
         form = RSVPform()
         errors = None
+
+    path = request.path
+    if "/en" in path:
+        path_lang_switch = path.replace("/en", "")
+    else:
+        # Füge "/en" hinzu, wenn es nicht vorhanden ist
+        path_lang_switch = path.replace("/de", "") + "en/"
+
     return render(
         request,
         "wedsite/index.html",
@@ -131,9 +141,10 @@ def index(request):
             "errors": errors,
             "dropzone_url": os.getenv("DROPZONE_URL"),
             "qr_img": qr_img_base64,
+            "lang": lang,
+            "path_lang_switch": path_lang_switch,
         },
     )
-
 
 def antworten(request):
     # falls noch nicht authed

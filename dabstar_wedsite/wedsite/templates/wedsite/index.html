@@ -5,6 +5,7 @@
 
 {% block body %}
 
+
 <section id="who" class="container">
     <div class="paar-back-container">
         <img id="paar-back-h" class="paar-back" src="{% static 'wedsite/imgs/paar-h.jpeg' %}">
@@ -34,6 +35,15 @@
 <section id="story-sec" class="container">
     <div id="story">
         <h2>{% trans "Manchmal trifft man die Liebe seines Lebens auf den unerwartetsten Wegen..." %}</h2>
+
+        <p>
+            {% if lang == "en" %}
+                <a class="lang-box" href="{{ path_lang_switch }}">&RightArrow; DE</a>
+            {% else %}
+                <a class="lang-box" href="{{ path_lang_switch }}">&RightArrow; EN</a>
+            {% endif %}
+        </p>
+
         <p>
             {% trans "Unsere Geschichte begann dank eines gemeinsamen Freundes und eines spontanen Abends in Köln." %}
             <br>
@@ -120,8 +130,8 @@
 
 <section id="ablauf">
     <div class="container-ghost">
-        <h1>{% trans "Ablauf" %}</h1>
-        <p>{% trans "Wann: 03.10.2025" %} <a href="{% url 'wedsite:download_ics' %}" download>(.ics)</a></p>
+        <h1>{% trans "Ablauf" %}</h1><a
+        <p>{% trans "Wann: 03.10.2025" %}  href="{% url 'wedsite:download_ics' %}" download>(.ics)</a></p>
         <ul>
             <li>{%trans "ca. 13:00 - Trauung (schätzungsweise)" %}</li>
         </ul>
