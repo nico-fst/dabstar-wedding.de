@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-20 13:01+0100\n"
+"POT-Creation-Date: 2025-02-20 14:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1242,29 +1242,26 @@ msgstr ""
 msgid "Connect, get help, or contribute"
 msgstr ""
 
-#: wedsite/templates/wedsite/index.html:19
-#: wedsite/templates/wedsite/thanks.html:19
+#: wedsite/templates/wedsite/index.html:26
 msgid "Menü"
 msgstr "Menu"
 
-#: wedsite/templates/wedsite/index.html:20
-#: wedsite/templates/wedsite/thanks.html:20
+#: wedsite/templates/wedsite/index.html:27
 msgid "Zusagen"
 msgstr "Commit"
 
-#: wedsite/templates/wedsite/index.html:21
-#: wedsite/templates/wedsite/index.html:120
-#: wedsite/templates/wedsite/thanks.html:21
+#: wedsite/templates/wedsite/index.html:28
+#: wedsite/templates/wedsite/index.html:127
 msgid "Ablauf"
 msgstr "Process"
 
-#: wedsite/templates/wedsite/index.html:29
+#: wedsite/templates/wedsite/index.html:36
 msgid ""
 "Manchmal trifft man die Liebe seines Lebens auf den unerwartetsten Wegen..."
 msgstr ""
 "Sometimes you meet the love of your life in the most unexpected ways..."
 
-#: wedsite/templates/wedsite/index.html:31
+#: wedsite/templates/wedsite/index.html:38
 msgid ""
 "Unsere Geschichte begann dank eines gemeinsamen Freundes und eines spontanen "
 "Abends in Köln."
@@ -1272,7 +1269,7 @@ msgstr ""
 "Our story began thanks to a mutual friend and a spontaneous evening in "
 "Cologne."
 
-#: wedsite/templates/wedsite/index.html:33
+#: wedsite/templates/wedsite/index.html:40
 msgid ""
 "An einem lauen Abend war Nia mit unserem gemeinsamen Freund verabredet, und "
 "sie entschieden sich, zusammen feiern zu gehen. Ich hingegen hatte "
@@ -1283,7 +1280,7 @@ msgstr ""
 "go party together. I, on the other hand, was bored and called this friend to "
 "ask what he was doing. He told me that he was in Cologne with a friend."
 
-#: wedsite/templates/wedsite/index.html:35
+#: wedsite/templates/wedsite/index.html:42
 msgid ""
 "Spontan fragte ich: 'Kannst du sie mal fragen, ob es okay ist, wenn ich "
 "mitkomme?' Nia hatte kein Problem damit und meinte: 'Klar, komm gerne mit.'"
@@ -1291,7 +1288,7 @@ msgstr ""
 "I spontaneously asked: 'Can you ask her if it's okay if I come with you?' "
 "Nia had no problem with that and said: 'Sure, feel free to come with me. "
 
-#: wedsite/templates/wedsite/index.html:37
+#: wedsite/templates/wedsite/index.html:44
 msgid ""
 "So zogen wir zu dritt los und landeten in einem Club. Doch das Feiern "
 "entsprach nicht ganz meinen Vorstellungen. Um den Abend spannender zu "
@@ -1305,7 +1302,7 @@ msgstr ""
 "the idea was funny and agreed. What started as a game surprisingly quickly "
 "felt very natural and right."
 
-#: wedsite/templates/wedsite/index.html:39
+#: wedsite/templates/wedsite/index.html:46
 msgid ""
 "Von diesem Moment an ließen wir einander nicht mehr los. Es war, als hätte "
 "das Schicksal uns zusammengeführt."
@@ -1313,11 +1310,11 @@ msgstr ""
 "From that moment on we never let go of each other. It was as if fate had "
 "brought us together."
 
-#: wedsite/templates/wedsite/index.html:41
+#: wedsite/templates/wedsite/index.html:48
 msgid "Ein Jahr später zogen wir gemeinsam nach Aachen."
 msgstr "A year later we moved to Aachen together."
 
-#: wedsite/templates/wedsite/index.html:43
+#: wedsite/templates/wedsite/index.html:50
 msgid ""
 "Vier Jahre später machte ich Nia einen Heiratsantrag, und fünf Jahre nach "
 "unserem Kennenlernen geben wir uns das Ja-Wort beim Standesamt."
@@ -1325,7 +1322,7 @@ msgstr ""
 "Four years later I proposed to Nia, and five years after we met, we "
 "exchanged vows at the registry office."
 
-#: wedsite/templates/wedsite/index.html:47
+#: wedsite/templates/wedsite/index.html:54
 msgid ""
 "Im sechsten Jahre nach diesem schicksalhaften Abend, möchten wir unser Glück "
 "mit unserer Familie und unseren Freunden feiern. Wir freuen uns darauf, "
@@ -1337,11 +1334,11 @@ msgstr ""
 "special moment with all of you and celebrating the love that began on a "
 "spontaneous evening in Cologne."
 
-#: wedsite/templates/wedsite/index.html:55
+#: wedsite/templates/wedsite/index.html:62
 msgid "Wir möchten gemeinsam mit euch feiern in der"
 msgstr "We would like to celebrate together with you in"
 
-#: wedsite/templates/wedsite/index.html:85
+#: wedsite/templates/wedsite/index.html:92
 msgid ""
 "Klicke oder hovere über die Karte fürs Hauptmenü. Klicke dann an eine andere "
 "Stelle zum Schließen."
@@ -1349,44 +1346,44 @@ msgstr ""
 "Click or hover over the card for the main menu. Then click somewhere else to "
 "close."
 
-#: wedsite/templates/wedsite/index.html:102
+#: wedsite/templates/wedsite/index.html:109
 msgid "Zusagen | Absagen"
 msgstr "Commit | Cancel"
 
-#: wedsite/templates/wedsite/index.html:104
+#: wedsite/templates/wedsite/index.html:111
 #, fuzzy
 #| msgid "Wir freuen uns, wenn ihr uns bis zum 01. April Bescheid gebt."
 msgid "Wir freuen uns, wenn ihr uns bis zum 15. April Bescheid gebt."
 msgstr "We would be happy if you let us know by April 1st."
 
-#: wedsite/templates/wedsite/index.html:106
+#: wedsite/templates/wedsite/index.html:113
 msgid ""
 "Updates zum Ablauf des Tages und weitere Informationen folgen an die Email."
 msgstr ""
 "Updates on the course of the day and further information will follow by "
 "email."
 
-#: wedsite/templates/wedsite/index.html:111
+#: wedsite/templates/wedsite/index.html:118
 msgid "Abschicken!"
 msgstr "Submit!"
 
-#: wedsite/templates/wedsite/index.html:113
+#: wedsite/templates/wedsite/index.html:120
 msgid "Bitte schickt das Formular auch bei einer Absage ab."
 msgstr "Please submit the form even if you plan to cancel."
 
-#: wedsite/templates/wedsite/index.html:122
+#: wedsite/templates/wedsite/index.html:129
 msgid "14:30 - Trauung (schätzungsweise)"
 msgstr "14:30 - wedding (estimated)"
 
-#: wedsite/templates/wedsite/index.html:124
+#: wedsite/templates/wedsite/index.html:131
 msgid "Weitere Informationen folgen."
 msgstr "Stay tuned for more information."
 
-#: wedsite/templates/wedsite/index.html:130
+#: wedsite/templates/wedsite/index.html:137
 msgid "Hier"
 msgstr "Here"
 
-#: wedsite/templates/wedsite/index.html:130
+#: wedsite/templates/wedsite/index.html:137
 msgid ""
 "könnt ihr uns im Nachhinein auf direktem Wege eure liebsten Fotos und Videos "
 "der Hochzeit zukommen lassen:"
@@ -1398,22 +1395,39 @@ msgstr ""
 msgid "Oh no, mindestens ein Fehlerleinchen ist aufgetreten:"
 msgstr "Oh no, at least one error occured:"
 
-#: wedsite/templates/wedsite/thanks.html:12
+#: wedsite/templates/wedsite/thanks.html:18
 msgid "Danke"
 msgstr "Cheers"
 
-#: wedsite/templates/wedsite/thanks.html:29
+#: wedsite/templates/wedsite/thanks.html:26
+msgid "Startseite"
+msgstr "Homepage"
+
+#: wedsite/templates/wedsite/thanks.html:35
 msgid "Danke fürs Abschicken"
 msgstr "Thanks for responding!"
 
-#: wedsite/templates/wedsite/thanks.html:31
+#: wedsite/templates/wedsite/thanks.html:36
+msgid "Wir freuen uns auf euch!"
+msgstr "We're looking forward to seeing you!"
+
+#: wedsite/templates/wedsite/thanks.html:37
 msgid ""
-"Und noch ein kleiner Tipp: Falls ihr noch nicht wisst, was ihr Nia & Daniel "
-"schenken wollt, könnt ihr sie mit einem Zuschuss zur Finanzierung glücklich "
-"machen :)."
+"Neue Infos folgen hier auf der Seite und per Mail. Falls ihr euch "
+"umentscheidet, doch (nicht) zu kommen oder krankheitsbedingt absagen "
+"möchtet, schreibt uns bitte an"
 msgstr ""
-"And a little tip: If you’re still unsure what to get Nia & Daniel, you can "
-"make them happy with a contribution to their funding. :)"
+"New updates will follow here on the page and via email. If you change your "
+"mind about attending or need to cancel due to illness, please contact us at"
+
+#: wedsite/templates/wedsite/thanks.html:38
+msgid ""
+"Und noch ein kleiner Tipp: Falls ihr noch nicht wisst, was ihr uns schenken "
+"möchtet, könnt ihr uns mit einem Zuschuss zur Finanzierung der Feier "
+"glücklich machen :)."
+msgstr ""
+"And a little hint: If you’re unsure what to gift us, you can make us happy "
+"with a contribution to help fund the celebration :)."
 
 #~ msgid "Cheers"
 #~ msgstr "Cheers"

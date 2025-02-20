@@ -23,7 +23,7 @@
 	<nav class="navbar">
 		<a href="{% url 'wedsite:index' %}">&gt;</a>
 		<a href="{% url 'wedsite:index' %}">&gt;</a>
-		<a id="rsvp-nav" href="{% url 'wedsite:index' %}">Startseite</a>
+		<a id="rsvp-nav" href="{% url 'wedsite:index' %}">{% trans "Startseite" %}</a>
 		<a href="{% url 'wedsite:index' %}">&lt;</a>
 		<a href="{% url 'wedsite:index' %}">&lt;</a>		
 	</nav>
@@ -33,9 +33,9 @@
 <section id="story-sec" class="container">
     <div id="story">
         <h2>{% trans "Danke fürs Abschicken" %}</h2>
-        <p>
-            {% trans "Und noch ein kleiner Tipp: Falls ihr noch nicht wisst, was ihr Nia & Daniel schenken wollt, könnt ihr sie mit einem Zuschuss zur Finanzierung glücklich machen :)." %}
-        </p>
+        <p>{% trans "Wir freuen uns auf euch!" %}</p>
+        <p>{% trans "Neue Infos folgen hier auf der Seite und per Mail. Falls ihr euch umentscheidet, doch (nicht) zu kommen oder krankheitsbedingt absagen möchtet, schreibt uns bitte an" %} <a href="mailto:einladung@dabstar-wedding.de">Einladung@Dabstar-Wedding.de</a>.</p>
+        <p>{% trans "Und noch ein kleiner Tipp: Falls ihr noch nicht wisst, was ihr uns schenken möchtet, könnt ihr uns mit einem Zuschuss zur Finanzierung der Feier glücklich machen :)." %}</p>
     </div>
 </section>
 
