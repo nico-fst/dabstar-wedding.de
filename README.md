@@ -4,9 +4,14 @@
 
 # Dabstar-Wedding.de
 
-A wedding page focused on a clean and simple, yet beige-stunning look.
+A wedding page focused on a clean and simple, yet stunning beige look.
 
-- saves validated RSVPs in `db.sqlite3` in `wedsite_data/` as volume
+![dabstar-wedding mobile 4th WIDE TITLED BOLD](https://github.com/user-attachments/assets/ba546321-313b-4191-9c4a-e856c2fdfd24)
+
+Built to run as Docker Container - saves validated RSVPs in `db.sqlite3` in `wedsite_data/` as volume
+
+# Deploy
+
 - .env should provide:
 
 ```yml
@@ -16,8 +21,6 @@ ALLOWED_HOSTS=<dabstar-wedding.de, ...>
 DROPZONE_URL=<https://...>
 PW_ANTWORTEN=<...>
 ```
-
-# Deploy
 
 - via `docker-compose up --build -d`
   - without cache (e.g. when changing env):
