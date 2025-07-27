@@ -23,10 +23,10 @@
 
 <header class="header">
 	<nav class="navbar">
+        <a href="#ablauf">{% trans "Ablauf" %}</a>
 		<a href="#location">Location</a>
-		<a href="#menu">{% trans "Menü" %}</a>
 		<a id="rsvp-nav" href="#rsvp">{% trans "Zusagen" %}</a>
-		<a href="#ablauf">{% trans "Ablauf" %}</a>
+		<a href="#menu">{% trans "Menü" %}</a>
 		<a href="#dropzone">Dropzone</a>		
 	</nav>
 	<div class="hamburger" id="hamburger">&#9776;</div>
@@ -66,6 +66,18 @@
     </div>
 </section>
 
+<section id="ablauf">
+    <div class="container-ghost">
+        <h1>{% trans "Ablauf" %}</h1>
+        <p>{% trans "Wann: 03.10.2025" %} <a href="{% url 'wedsite:download_ics' %}" download>(.ics Download)</a></p>
+        <ul>
+            <li>{%trans "13:00 - Beginn der Trauung" %}</li>
+            <li>{%trans "15:30 - Einlass in den Saal" %}</li>
+        </ul>
+        <p>{% trans "Weitere Informationen folgen..." %}</p>
+    </div>
+</section>
+
 <section id="location" class="container-ghost">
     <h1>Location</h1>
     <p>
@@ -93,22 +105,6 @@
     </div>
 </section>
 
-<section id="menu" class="menu-container">
-    <h1>Menü</h1>
-    <p>{% trans "Klicke oder hovere über die Karte fürs Hauptmenü. Klicke dann an eine andere Stelle zum Schließen." %}</p>
-    <div class="card-wrapper">
-        <div class="card-container">
-            <div class="card">
-                <div class="front">
-                    <img src="{% static 'wedsite/imgs/menu_1.PNG' %}">
-                </div>
-                <div class="back">
-                    <img src="{% static 'wedsite/imgs/menu_2.PNG' %}">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <section id="rsvp" class="container">
     <div class="rsvp-form-container">
         <div class="rsvp-form">
@@ -128,19 +124,25 @@
     </div>
 </section>
 
-<section id="ablauf">
-    <div class="container-ghost">
-        <h1>{% trans "Ablauf" %}</h1>
-        <p>{% trans "Wann: 03.10.2025" %} <a href="{% url 'wedsite:download_ics' %}" download>(.ics)</a></p>
-        <ul>
-            <li>{%trans "ca. 13:00 - Trauung (schätzungsweise)" %}</li>
-        </ul>
-        <p>{% trans "Weitere Informationen folgen. Bitte periodisch hier nachschauen." %}</p>
+<section id="menu" class="menu-container">
+    <h1>Menü</h1>
+    <p>{% trans "Klicke oder hovere über die Karte fürs Hauptmenü. Klicke dann an eine andere Stelle zum Schließen." %}</p>
+    <div class="card-wrapper">
+        <div class="card-container">
+            <div class="card">
+                <div class="front">
+                    <img src="{% static 'wedsite/imgs/menu_1.PNG' %}">
+                </div>
+                <div class="back">
+                    <img src="{% static 'wedsite/imgs/menu_2.PNG' %}">
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
 <section id="dropzone" class="container-ghost">
-    <h1>Dropzone</h1>
+    <h1>Fotos</h1>
     <p><a href={{dropzone_url}}>{% trans "Hier" %}</a> {% trans "könnt ihr uns im Nachhinein auf direktem Wege eure liebsten Fotos und Videos der Hochzeit zukommen lassen:" %}</p>
     <br>
     <div class="card-wrapper">

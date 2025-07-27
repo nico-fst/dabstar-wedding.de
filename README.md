@@ -34,7 +34,7 @@ PW_ANTWORTEN=<...>
 1. Replace e.g. `<p>Hallo Hochzeitsseite</p>` with `<p>{% trans "Hallo Hochzeitsseite %}</p>`
 2. Create Translation .po files with
   - `python3 manage.py makemessages -l en`
-  - `python3 manage.py makemessages -l de`
+  - `python3 manage.py makemessages -l de` (not necessary since default)
 3. Add translations in the .po files, e.g.:
 
 ```
@@ -42,7 +42,7 @@ msgid "Hallo Hochzeitsseite"
 msgstr "Hello Wedsite"
 ```
 
-4. Coompile .po files to .mo files via `python3 manage.py compilemessages`
+4. Compile .po files to .mo files via `python3 manage.py compilemessages`
 
 ---
 

@@ -2,6 +2,7 @@ services:
   django:
     container_name: dabstar-wedsite
     image: django-docker:0.0.1
+    restart: always
     build: .
     env_file:
       - .env
