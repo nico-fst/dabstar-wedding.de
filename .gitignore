@@ -6,6 +6,9 @@ __pycache__/
 # Mac
 .DS_Store
 
+# Volumes
+wedsite_data/db.sqlite3
+
 # C extensions
 *.so
 
