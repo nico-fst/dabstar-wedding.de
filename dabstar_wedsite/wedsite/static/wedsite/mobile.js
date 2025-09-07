@@ -36,6 +36,7 @@ function handleScroll() {
 
   if (currentScroll > lastScrollTop) {
     // scroll down
+    header.classList.remove("active");
     header.style.transform = "translateY(-110%)";
   } else {
     // scroll up

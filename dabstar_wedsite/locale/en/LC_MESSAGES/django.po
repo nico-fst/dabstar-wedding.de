@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-27 20:20+0200\n"
+"POT-Creation-Date: 2025-09-07 13:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -453,30 +453,30 @@ msgstr ""
 msgid "Value must be valid JSON."
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/django/db/models/fields/related.py:978
+#: venv/lib/python3.10/site-packages/django/db/models/fields/related.py:979
 #, python-format
 msgid "%(model)s instance with %(field)s %(value)r is not a valid choice."
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/django/db/models/fields/related.py:981
+#: venv/lib/python3.10/site-packages/django/db/models/fields/related.py:982
 msgid "Foreign Key (type determined by related field)"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/django/db/models/fields/related.py:1275
+#: venv/lib/python3.10/site-packages/django/db/models/fields/related.py:1276
 msgid "One-to-one relationship"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/django/db/models/fields/related.py:1332
+#: venv/lib/python3.10/site-packages/django/db/models/fields/related.py:1333
 #, python-format
 msgid "%(from)s-%(to)s relationship"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/django/db/models/fields/related.py:1334
+#: venv/lib/python3.10/site-packages/django/db/models/fields/related.py:1335
 #, python-format
 msgid "%(from)s-%(to)s relationships"
 msgstr ""
 
-#: venv/lib/python3.10/site-packages/django/db/models/fields/related.py:1382
+#: venv/lib/python3.10/site-packages/django/db/models/fields/related.py:1383
 msgid "Many-to-many relationship"
 msgstr ""
 
@@ -1242,18 +1242,18 @@ msgstr ""
 msgid "Connect, get help, or contribute"
 msgstr ""
 
-#: wedsite/templates/wedsite/index.html:27
-msgid "Menü"
-msgstr "Menu"
+#: wedsite/templates/wedsite/index.html:26
+#: wedsite/templates/wedsite/index.html:71
+msgid "Ablauf"
+msgstr "Process"
 
 #: wedsite/templates/wedsite/index.html:28
 msgid "Zusagen"
 msgstr "Commit"
 
 #: wedsite/templates/wedsite/index.html:29
-#: wedsite/templates/wedsite/index.html:137
-msgid "Ablauf"
-msgstr "Process"
+msgid "Menü"
+msgstr "Menu"
 
 #: wedsite/templates/wedsite/index.html:37
 msgid ""
@@ -1335,10 +1335,53 @@ msgstr ""
 "began on a spontaneous evening in Cologne."
 
 #: wedsite/templates/wedsite/index.html:72
-msgid "Wir möchten gemeinsam mit euch feiern in der"
+msgid "Wann: 03.10.2025"
+msgstr "When: October 3, 2025"
+
+#: wedsite/templates/wedsite/index.html:74
+msgid "13:00 - Beginn der Trauung"
+msgstr "1:00 PM - Start of the ceremony"
+
+#: wedsite/templates/wedsite/index.html:75
+msgid "15:30 - Einlass in den Saal"
+msgstr "3:30 PM - Doors open to the hall"
+
+#: wedsite/templates/wedsite/index.html:77
+msgid "Weitere Informationen folgen..."
+msgstr "Stay tuned for further information..."
+
+#: wedsite/templates/wedsite/index.html:84
+msgid "Die Trauung wird stattfinden in der"
+msgstr "The ceremony will take place in the"
+
+#: wedsite/templates/wedsite/index.html:87
+msgid "Wir möchten danach gemeinsam mit euch feiern in der"
 msgstr "We would like to celebrate together with you in"
 
-#: wedsite/templates/wedsite/index.html:102
+#: wedsite/templates/wedsite/index.html:118
+msgid "Zusagen | Absagen"
+msgstr "Commit | Cancel"
+
+#: wedsite/templates/wedsite/index.html:120
+msgid "Wir freuen uns, wenn ihr uns bis zum 15. April Bescheid gebt."
+msgstr "We would be happy if you let us know by April 1st."
+
+#: wedsite/templates/wedsite/index.html:122
+msgid ""
+"Updates zum Ablauf des Tages und weitere Informationen folgen an die Email."
+msgstr ""
+"Updates on the course of the day and further information will follow by "
+"email."
+
+#: wedsite/templates/wedsite/index.html:127
+msgid "Abschicken!"
+msgstr "Submit!"
+
+#: wedsite/templates/wedsite/index.html:129
+msgid "Bitte schickt das Formular auch bei einer Absage ab."
+msgstr "Please submit the form even if you plan to cancel."
+
+#: wedsite/templates/wedsite/index.html:136
 msgid ""
 "Klicke oder hovere über die Karte fürs Hauptmenü. Klicke dann an eine andere "
 "Stelle zum Schließen."
@@ -1346,52 +1389,11 @@ msgstr ""
 "Click or hover over the card for the main menu. Then click somewhere else to "
 "close."
 
-#: wedsite/templates/wedsite/index.html:119
-msgid "Zusagen | Absagen"
-msgstr "Commit | Cancel"
-
-#: wedsite/templates/wedsite/index.html:121
-#, fuzzy
-#| msgid "Wir freuen uns, wenn ihr uns bis zum 01. April Bescheid gebt."
-msgid "Wir freuen uns, wenn ihr uns bis zum 15. April Bescheid gebt."
-msgstr "We would be happy if you let us know by April 1st."
-
-#: wedsite/templates/wedsite/index.html:123
-msgid ""
-"Updates zum Ablauf des Tages und weitere Informationen folgen an die Email."
-msgstr ""
-"Updates on the course of the day and further information will follow by "
-"email."
-
-#: wedsite/templates/wedsite/index.html:128
-msgid "Abschicken!"
-msgstr "Submit!"
-
-#: wedsite/templates/wedsite/index.html:130
-msgid "Bitte schickt das Formular auch bei einer Absage ab."
-msgstr "Please submit the form even if you plan to cancel."
-
-#: wedsite/templates/wedsite/index.html:138
-msgid "Wann: 03.10.2025"
-msgstr "When: October 3, 2025"
-
-#: wedsite/templates/wedsite/index.html:140
-msgid "13:00 - Beginn der Trauung"
-msgstr "1:00 PM - Start of the ceremony"
-
-#: wedsite/templates/wedsite/index.html:141
-msgid "15:30 - Einlass in den Saal"
-msgstr "3:30 PM - Doors open to the hall"
-
-#: wedsite/templates/wedsite/index.html:143
-msgid "Weitere Informationen folgen..."
-msgstr "Stay tuned for further information..."
-
-#: wedsite/templates/wedsite/index.html:149
+#: wedsite/templates/wedsite/index.html:153
 msgid "Hier"
 msgstr "Here"
 
-#: wedsite/templates/wedsite/index.html:149
+#: wedsite/templates/wedsite/index.html:153
 msgid ""
 "könnt ihr uns im Nachhinein auf direktem Wege eure liebsten Fotos und Videos "
 "der Hochzeit zukommen lassen:"

@@ -7,7 +7,7 @@
     --brown3: #ad9985;
     --brown4: #847363;
     --brown5: #5e4f3f;
-    --nav: rgba(147, 103, 72, 0.5);
+    --nav: rgba(147, 103, 72, 0.3);
     --nav-darker: rgba(147, 103, 72, 0.7);
     --paar-wand: #ECE3D8;
 
@@ -124,14 +124,15 @@ body {
     right: 15%;
     padding: 0.2rem 1rem;
     background-color: var(--nav);
-    backdrop-filter: blur(1rem);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    border-radius: 1.25rem;
+    backdrop-filter: blur(0.3rem);
+    border: 1px solid var(--whitish1);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), 5px 5px 20px rgba(255, 255, 255, 0.4) inset;
+    border-radius: 5rem;
 }
 
 .navbar a {
     text-decoration: none;
-    color: white;
+    color: black;
     display: inline-block;
     padding: 1rem;
 }
@@ -169,7 +170,7 @@ body {
 
     .hamburger {
         display: block;
-        color: var(--brown5);
+        color: black;
     }
 }
 
